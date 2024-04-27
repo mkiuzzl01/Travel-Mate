@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { LuEyeOff } from "react-icons/lu";
 import { FiEye } from "react-icons/fi";
 import { AuthContext } from "../AuthProvider/AuthProvider";
@@ -8,6 +8,8 @@ const Register = () => {
   const [showPass, setShowPass] = useState(false);
   const { registerUser, updateUser } = useContext(AuthContext);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -36,6 +38,7 @@ const Register = () => {
           });
         console.log(result);
         form.reset();
+        navigate(location?.state ? location.state : '/');
       })
       .catch((error) => {
         console.error(error);

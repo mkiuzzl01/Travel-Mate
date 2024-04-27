@@ -1,6 +1,19 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Navbar = () => {
+  const { user,logOut } = useContext(AuthContext);
+
+  const userLogOut = ()=>{
+    logOut()
+    .then(result=>{
+      console.log(result);
+    })
+    .catch(error=>{
+      console.error(error);
+    })
+  }
   const navbar = (
     <>
       <NavLink
@@ -33,16 +46,19 @@ const Navbar = () => {
       >
         Add Tourists Spot
       </NavLink>
+     {
+      user && 
       <NavLink
-        className={({ isActive }) =>
-          isActive
-            ? "border-t-2 rounded-lg text-[#23BE0A] border-red-500 p-2"
-            : "p-2 hover:border-gray-600 hover:border-b-2 rounded-lg"
-        }
-        to="/My_List"
-      >
-        My List
-      </NavLink>
+      className={({ isActive }) =>
+        isActive
+          ? "border-t-2 rounded-lg text-[#23BE0A] border-red-500 p-2"
+          : "p-2 hover:border-gray-600 hover:border-b-2 rounded-lg"
+      }
+      to="/My_List"
+    >
+      My List
+    </NavLink>
+     }
     </>
   );
   return (
@@ -79,12 +95,34 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{navbar}</ul>
         </div>
         <div className="navbar-end space-x-2">
-          <Link to="/LogIn" className="btn">
-            LogIn
-          </Link>
-          <Link to="/Register" className="btn">
-            Register
-          </Link>
+          {user ? (
+            <>
+              <div className="tooltip tooltip-accent tooltip-bottom lg:tooltip-left" data-tip={user?.displayName? user.displayName : 'Username Not Found'}>
+                {" "}
+                <img
+                  src={
+                    user?.photoURL
+                      ? user.photoURL
+                      : "https://i.ibb.co/x19M7TG/blank-profile-picture-973460-1280.png"
+                  }
+                  alt={user?.email}
+                  className="w-10 rounded-full "
+                />
+              </div>
+              <div>
+                <button onClick={userLogOut} className="btn">LogOut</button>
+              </div>
+            </>
+          ) : (
+            <div className="space-x-2">
+              <Link to="/LogIn" className="btn">
+                LogIn
+              </Link>
+              <Link to="/Register" className="btn">
+                Register
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </div>

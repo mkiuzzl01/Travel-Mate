@@ -6,6 +6,7 @@ import Add_Tourist_Sport from "../Pages/Add_Tourist_Sport";
 import My_List from "../Pages/My_List";
 import LogIn from "../Pages/LogIn";
 import Register from "../Pages/Register";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -23,11 +24,11 @@ const router = createBrowserRouter([
             },
             {
                 path:'/Add_Tourist_Sport',
-                element:<Add_Tourist_Sport></Add_Tourist_Sport>
+                element:<PrivateRoute><Add_Tourist_Sport></Add_Tourist_Sport></PrivateRoute>
             },
             {
                 path:'/My_List',
-                element:<My_List></My_List>
+                element:<PrivateRoute><My_List></My_List></PrivateRoute>
             },
             {
                 path:'/LogIn',
