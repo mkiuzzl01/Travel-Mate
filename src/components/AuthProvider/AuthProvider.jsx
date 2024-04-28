@@ -12,14 +12,12 @@ import {
 import auth from "../../firebase/firebase.config";
 
 export const AuthContext = createContext(null);
+const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  console.log(user);
-  const [loading, setLoading] = useState(false);
-
-  const googleProvider = new GoogleAuthProvider();
-  const githubProvider = new GithubAuthProvider();
+  const [loading, setLoading] = useState(true);
 
   const registerUser = (email, pass) => {
     setLoading(true);
