@@ -7,11 +7,10 @@ import { Helmet } from "react-helmet";
 const My_List = () => {
   const { user } = useContext(AuthContext);
   const [myData, setMyData] = useState([]);
-  console.log(myData);
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`https://travel-mate-server-15a60d9z7.vercel.app/My_List/${user?.email}`)
+      fetch(`http://localhost:5000/My_List/${user?.email}`)
         .then((res) => res.json())
         .then((data) => {
           setMyData(data);
@@ -83,7 +82,7 @@ const My_List = () => {
                 <td>{data.seasonal}</td>
                 <td>{data.country_Name}</td>
                 <td>
-                  <img src={data.photo} alt="" className="w-1/5" />
+                  <img src={data.photo} alt="" className="w-20" />
                 </td>
                 <td>
                   <Link to={`/Update_Tourist_Sport/${data._id}`}>

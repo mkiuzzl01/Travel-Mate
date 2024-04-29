@@ -5,6 +5,8 @@ import { FiEye } from "react-icons/fi";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
   const [showPass, setShowPass] = useState(false);
@@ -24,15 +26,25 @@ const Register = () => {
 
     setError();
     if (Password.length < 6) {
+      toast.error("Something Wrong!", {
+        position: "bottom-center"
+      });
       return setError("Password must be at least 6 character or longer");
+
     } else if (!/[A-Z]/.test(Password)) {
+      toast.error("Something Wrong!", {
+        position: "bottom-center"
+      });
       return setError("Should contain at least one upper case");
     } else if (!/[a-z]/.test(Password)) {
+      toast.error("Something Wrong!", {
+        position: "bottom-center"
+      });
       return setError("Should contain at least one lower case");
     }
 
     registerUser(Email, Password)
-      .then((result) => {
+      .then(() => {
         updateUser(Name, PhotoURL)
           .then(() => {})
           .catch((error) => {
@@ -50,7 +62,9 @@ const Register = () => {
         navigate(location?.state ? location.state : '/');
       })
       .catch((error) => {
-        console.error(error);
+        toast.error("Something Wrong!", {
+          position: "bottom-center"
+        });
         setError(error.message.split("/")[1].split(")"));
       });
   };
@@ -60,6 +74,7 @@ const Register = () => {
         className="flex flex-col lg:flex-row md:justify-center items-center bg-gradient-to-b from-teal-500 to-teal-300   rounded-lg my-4 p-4 font-PT_Sans"
         data-aos="flip-up"
       >
+        <ToastContainer />
         <Helmet>
           <title>Travel-Mate | Register </title>
       </Helmet>

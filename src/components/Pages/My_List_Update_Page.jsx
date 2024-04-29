@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 
 const My_List_Update_Page = () => {
   const initialData = useLoaderData();
+  console.log(initialData);
   const {
     _id,
     sport_name,
@@ -20,8 +21,6 @@ const My_List_Update_Page = () => {
     userName,
     userEmail,
   } = initialData;
-
-  console.log(initialData);
   const [select, setSelect] = useState();
 
   const handleSubmit = (e) => {

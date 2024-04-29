@@ -5,6 +5,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 const LogIn = () => {
   const [showPass, setShowPass] = useState(false);
@@ -34,8 +36,10 @@ const LogIn = () => {
         form.reset();
       })
       .catch(() => {
+        toast.error("Something Wrong!", {
+          position: "bottom-center"
+        });
         setError("Something wrong");
-        //   errorToast('Something Wrong')
       });
   };
 
@@ -50,8 +54,11 @@ const LogIn = () => {
       })
       navigate(location?.state ? location.state : "/");
     })
-    .catch(error=>{
-      console.error(error);
+    .catch(()=>{
+      setError("Something wrong");
+      toast.error("Something Wrong!", {
+        position: "bottom-center"
+      });
     })
   }
 
@@ -66,8 +73,11 @@ const LogIn = () => {
       })
       navigate(location?.state ? location.state : "/");
     })
-    .catch(error=>{
-      console.error(error);
+    .catch(()=>{
+      toast.error("Something Wrong!", {
+        position: "bottom-center"
+      });
+      setError("Something wrong");
     })
   }
   return (
@@ -75,6 +85,7 @@ const LogIn = () => {
       className="flex flex-col lg:flex-row md:justify-center items-center bg-gradient-to-b from-teal-500 to-teal-300 rounded-lg my-4 p-4 font-PT_Sans "
       data-aos="flip-down"
     >
+      <ToastContainer />
       <Helmet>
         <title>Travel-Mate | Login </title>
       </Helmet>

@@ -23,7 +23,7 @@ const Tourist_Sport_Card = ({ sport }) => {
     <div data-aos="zoom-in">
       <div className="card card-compact bg-base-100 border-2 shadow-lg">
         <figure>
-          <img src={photo} alt={sport_name} className="w-screen" />
+          <img src={photo} alt={sport_name} className="w-full lg:h-80" />
         </figure>
         <div className="card-body grow">
           <div className="flex justify-between border-b-2 border-dashed p-2">

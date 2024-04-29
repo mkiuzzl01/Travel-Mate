@@ -182,7 +182,7 @@ const Add_Tourist_Sport = () => {
                 type="text"
                 placeholder="User Email"
                 id="user_email"
-                defaultValue={user.email}
+                defaultValue={user?.email}
                 className="input input-bordered w-full"
               />
             </div>
