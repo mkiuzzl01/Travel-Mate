@@ -9,12 +9,14 @@ import Register from "../Pages/Register";
 import PrivateRoute from "./PrivateRoute";
 import View_Details from "../Pages/View_Details";
 import My_List_Update_Page from "../Pages/My_List_Update_Page";
+import Not_Found from "../Pages/Not_Found";
 
 
 const router = createBrowserRouter([
     {
         path:'/',
         element:<Root></Root>,
+        errorElement:<Not_Found></Not_Found>,
         children:[
             {
                 path:'/',
