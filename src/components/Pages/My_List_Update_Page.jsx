@@ -1,12 +1,29 @@
-import { useContext, useState } from "react";
-import { AuthContext } from "../AuthProvider/AuthProvider";
+
+import { useState } from "react";
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const Add_Tourist_Sport = () => {
-    const [select,setSelect] = useState();
-    const {user} = useContext(AuthContext);
+const My_List_Update_Page = () => {
+  const initialData = useLoaderData();
+  const {
+    _id,
+    sport_name,
+    country_Name,
+    location,
+    description,
+    average_cost,
+    travel_time,
+    photo,
+    total_visitor,
+    seasonal,
+    userName,
+    userEmail,
+  } = initialData;
 
-  const addTouristSport = (e) => {
+  console.log(initialData);
+  const [select, setSelect] = useState();
+
+  const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
     const sport_name = form.name.value;
@@ -18,51 +35,39 @@ const Add_Tourist_Sport = () => {
     const total_visitor = form.total_visitor.value;
     const photo = form.photo.value;
     const seasonal = select;
-    const userEmail = user.email;
-    const userName = user.displayName;
 
-    const info = {
-      sport_name,
-      country_Name,
-      location,
-      description,
-      average_cost,
-      travel_time,
-      photo,
-      total_visitor,
-      seasonal,
-      userName,
-      userEmail
-    }
+    const info = {sport_name,country_Name,location,description,average_cost,travel_time,total_visitor,photo,seasonal,userEmail,userName}
+    console.log(info);
 
-   //send data to server
-   fetch('http://localhost:5000/Tourist_Sports',{
-    method:"POST",
-    headers:{
-      'content-type':'application/json'
-    },
-    body:JSON.stringify(info)
-   })
-   .then(res=> res.json())
-   .then(data => {
-    if (data.insertedId){
-      Swal.fire({
-        title: 'Success!',
-        text: 'Tourist Sport Created Successfully!',
-        icon: 'success',
-        confirmButtonText: 'Ok'
-      })
-      form.reset();
-    }
-   })
+    fetch(`http://localhost:5000/Tourist_Sports/${_id}`,{
+            method:'PUT',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(info)
+        })
+        .then(res=> res.json())
+        .then(data=>{
+            if(data.modifiedCount>0){
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Tourist Sport Updated Successfully!',
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                  })
+            }
+            form.reset();
+        })
   };
   return (
     <div className="max-w-4xl m-auto bg-[#F4F3F0] p-6 my-4 ">
       <div>
         <div className="space-y-4 mb-4">
-          <h1 className="text-4xl text-center dark:text-black">Add Tourist Sport</h1>
+          <h1 className="text-4xl text-center dark:text-black">
+            Update Tourist Sport
+          </h1>
         </div>
-        <form onSubmit={addTouristSport} className="form-control p-6">
+        <form onSubmit={handleSubmit} className="form-control p-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div className="form-control">
               <label htmlFor="sport_name">
@@ -70,6 +75,7 @@ const Add_Tourist_Sport = () => {
               </label>
               <input
                 required
+                defaultValue={sport_name}
                 name="name"
                 type="text"
                 placeholder="Tourist Sport Name"
@@ -82,6 +88,7 @@ const Add_Tourist_Sport = () => {
                 <span className="dark:text-black">Country Name</span>
               </label>
               <input
+                defaultValue={country_Name}
                 required
                 name="country_Name"
                 type="text"
@@ -95,6 +102,7 @@ const Add_Tourist_Sport = () => {
                 <span className="dark:text-black">Location:</span>
               </label>
               <input
+                defaultValue={location}
                 required
                 name="location"
                 type="text"
@@ -108,6 +116,7 @@ const Add_Tourist_Sport = () => {
                 <span className="dark:text-black">Description:</span>
               </label>
               <input
+                defaultValue={description}
                 required
                 name="description"
                 type="text"
@@ -122,6 +131,7 @@ const Add_Tourist_Sport = () => {
               </label>
               <input
                 required
+                defaultValue={average_cost}
                 name="average_cost"
                 type="text"
                 placeholder="Average Cost"
@@ -135,6 +145,7 @@ const Add_Tourist_Sport = () => {
               </label>
               <input
                 required
+                defaultValue={travel_time}
                 name="travel_time"
                 type="text"
                 placeholder="Travel Time"
@@ -145,11 +156,13 @@ const Add_Tourist_Sport = () => {
             <div className="form-control">
               <span className="dark:text-black">Seasonality:</span>
               <select
-              value={select} onChange={e=>setSelect(e.target.value)}
+                value={select}
+                onChange={(e) => setSelect(e.target.value)}
+                defaultValue={seasonal}
                 className="select select-bordered join-item"
               >
                 <option disabled selected>
-                 Choose
+                  Choose
                 </option>
                 <option>summer</option>
                 <option>winter</option>
@@ -161,6 +174,7 @@ const Add_Tourist_Sport = () => {
               </label>
               <input
                 required
+                defaultValue={total_visitor}
                 name="total_visitor"
                 type="text"
                 placeholder="Total Visitor Per Year"
@@ -174,11 +188,11 @@ const Add_Tourist_Sport = () => {
               </label>
               <input
                 required
+                defaultValue={userName}
                 name="user_email"
                 type="text"
                 placeholder="User Email"
                 id="user_email"
-                defaultValue={user.email}
                 className="input input-bordered w-full"
               />
             </div>
@@ -188,11 +202,11 @@ const Add_Tourist_Sport = () => {
               </label>
               <input
                 required
+                defaultValue={userEmail}
                 name="user_name"
                 type="text"
                 placeholder="User Name"
                 id="user_name"
-                defaultValue={user.displayName}
                 className="input input-bordered w-full"
               />
             </div>
@@ -204,6 +218,7 @@ const Add_Tourist_Sport = () => {
               </label>
               <input
                 required
+                defaultValue={photo}
                 name="photo"
                 type="text"
                 placeholder="Photo URL"
@@ -216,7 +231,7 @@ const Add_Tourist_Sport = () => {
                 required
                 type="submit"
                 className="btn bg-[#D2B48C] w-full dark:text-black dark:hover:text-white"
-                value="Add"
+                value="Submit"
               />
             </div>
           </div>
@@ -226,4 +241,4 @@ const Add_Tourist_Sport = () => {
   );
 };
 
-export default Add_Tourist_Sport;
+export default My_List_Update_Page;

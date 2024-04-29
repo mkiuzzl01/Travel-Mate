@@ -18,9 +18,9 @@ const View_Details = () => {
         <div className="">
           <h1 className="font-bold text-4xl py-2">{sport.sport_name}</h1>
           <p className="py-2">
-            <span className="text-[#131313CC] font-medium">{sport.description}</span>{" "}
+            <span className="font-medium">{sport.description}</span>{" "}
           </p>
-          <p className="text-[#131313CC] font-medium border-y-2 py-2">
+          <p className="font-medium border-y-2 py-2">
             {sport.location}
           </p>
           <p className="py-2">
@@ -41,7 +41,7 @@ const View_Details = () => {
                   <span>Country:</span>
                 </td>
                 <td>
-                  <span className="text-[#131313] font-semibold">{sport.country_Name}</span>
+                  <span className="font-semibold">{sport.country_Name}</span>
                 </td>
               </tr>
               <tr>
@@ -49,7 +49,7 @@ const View_Details = () => {
                   <span>seasonality:</span>
                 </td>
                 <td>
-                  <span className="text-[#131313] font-semibold">
+                  <span className="font-semibold">
                     {sport.seasonal}
                   </span>
                 </td>
@@ -59,7 +59,7 @@ const View_Details = () => {
                   <span>Travel Time:</span>
                 </td>
                 <td>
-                  <span className="text-[#131313] font-semibold">
+                  <span className="font-semibold">
                     {sport.travel_time}
                   </span>
                 </td>

@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -22,7 +23,12 @@ const Navbar = () => {
   const userLogOut = () => {
     logOut()
       .then((result) => {
-        console.log(result);
+        Swal.fire({
+          title: 'Success!',
+          text: 'User LogOut Successfully!',
+          icon: 'warning',
+          confirmButtonText: 'Ok'
+        })
       })
       .catch((error) => {
         console.error(error);
@@ -67,7 +73,7 @@ const Navbar = () => {
               ? "border-b-2 rounded-lg text-[#23BE0A] border-red-500 p-2"
               : "p-2 hover:border-gray-600 hover:border-x-2 rounded-lg"
           }
-          to={`/My_List/${user.email}`}
+          to='/My_List'
         >
           My List
         </NavLink>
@@ -76,7 +82,7 @@ const Navbar = () => {
   );
   return (
     <div>
-      <div className="navbar bg-base-100 border-b-2 rounded-lg">
+      <div className="navbar bg-base-100 shadow-md rounded-lg">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

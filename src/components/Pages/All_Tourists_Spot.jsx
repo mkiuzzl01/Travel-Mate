@@ -1,27 +1,35 @@
-import { useLoaderData } from "react-router-dom";
+
 import Tourist_Sport_Card from "./Tourist_Sport_Card";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const All_Tourists_Spot = () => {
-  const initialSports = useLoaderData();
-  const [sports,setSpots] = useState(initialSports);
+  const [sports,setSpots] = useState([]);
 
   const minCost = ()=>{
-    const info = sports.sort(function(a,b){
+   const data =  sports.sort(function(a,b){
         return parseInt(a.average_cost) - parseInt(b.average_cost);
     })
-    console.log(info);
-    setSpots(info);
+    setSpots(data);
+    console.log(data);
   }
 
   const maxCost = ()=>{
-    const info = sports.sort(function(a,b){
+    const data  = sports.sort(function(a,b){
         return parseInt(a.average_cost) - parseInt(b.average_cost);
     })
-    info.reverse();
-    console.log(info);
-    setSpots(info);
+    data.reverse();
+    console.log(data);
+    setSpots(data);
   }
+
+  useEffect(() => {
+    fetch('http://localhost:5000/Tourist_Sports')
+    .then(res=> res.json())
+    .then(data=>
+        setSpots(data)
+        )
+    
+  }, []);
 
   return (
     <div>

@@ -8,6 +8,7 @@ import LogIn from "../Pages/LogIn";
 import Register from "../Pages/Register";
 import PrivateRoute from "./PrivateRoute";
 import View_Details from "../Pages/View_Details";
+import My_List_Update_Page from "../Pages/My_List_Update_Page";
 
 
 const router = createBrowserRouter([
@@ -22,7 +23,6 @@ const router = createBrowserRouter([
             },
             {
                 path:'/All_Tourists_Spot',
-                loader:()=> fetch('http://localhost:5000/Tourist_Sports'),
                 element:<All_Tourists_Spot></All_Tourists_Spot>
             },
             {
@@ -31,12 +31,16 @@ const router = createBrowserRouter([
                 element:<View_Details></View_Details>
             },
             {
+                path:'/Update_Tourist_Sport/:id',
+                loader:({params})=> fetch(`http://localhost:5000/Tourist_Sports/${params.id}`),
+                element:<PrivateRoute><My_List_Update_Page></My_List_Update_Page></PrivateRoute>
+            },
+            {
                 path:'/Add_Tourist_Sport',
                 element:<PrivateRoute><Add_Tourist_Sport></Add_Tourist_Sport></PrivateRoute>
             },
             {
-                path:'/My_List/:email',
-                loader:({params})=> fetch(`http://localhost:5000/Tourist_Sports/${params.email}`),
+                path:'/My_List',
                 element:<PrivateRoute><My_List></My_List></PrivateRoute>
             },
             {

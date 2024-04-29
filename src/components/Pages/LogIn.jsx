@@ -3,6 +3,7 @@ import { FiEye } from "react-icons/fi";
 import { LuEyeOff } from "react-icons/lu";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const LogIn = () => {
   const [showPass, setShowPass] = useState(false);
@@ -22,7 +23,12 @@ const LogIn = () => {
       .then(() => {
         console.log("login successful");
         // Navigate After Login
-        //   successToast('Login Successful');
+        Swal.fire({
+          title: 'Success!',
+          text: 'User LogIn Successfully!',
+          icon: 'success',
+          confirmButtonText: 'Ok'
+        })
         navigate(location?.state ? location.state : "/");
         form.reset();
       })
@@ -34,8 +40,13 @@ const LogIn = () => {
 
   const handleLogInGoogle = ()=>{
     logInWithGoogle()
-    .then(result=>{
-      console.log(result);
+    .then(()=>{
+      Swal.fire({
+        title: 'Success!',
+        text: 'User LogIn Successfully!',
+        icon: 'success',
+        confirmButtonText: 'Ok'
+      })
     })
     .catch(error=>{
       console.error(error);
@@ -44,8 +55,13 @@ const LogIn = () => {
 
   const handleLogInGithub = ()=>{
     logInWithGithub()
-    .then(result=>{
-      console.log(result);
+    .then(()=>{
+      Swal.fire({
+        title: 'Success!',
+        text: 'User LogIn Successfully!',
+        icon: 'success',
+        confirmButtonText: 'Ok'
+      })
     })
     .catch(error=>{
       console.error(error);

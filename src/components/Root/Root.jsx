@@ -5,7 +5,7 @@ import Footer from "../Layout/Footer";
 const Root = () => {
   return (
     <div>
-      <header>
+      <header className="sticky top-0 z-10">
         <Navbar></Navbar>
       </header>
       <main className="min-h-[calc(100vh-292px)] mx-2">

@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { LuEyeOff } from "react-icons/lu";
 import { FiEye } from "react-icons/fi";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const [showPass, setShowPass] = useState(false);
@@ -36,7 +37,14 @@ const Register = () => {
           .catch((error) => {
             console.error(error);
           });
-        console.log(result);
+        
+          Swal.fire({
+            title: 'Success!',
+            text: 'User Registration Successfully!',
+            icon: 'success',
+            confirmButtonText: 'Ok'
+          })
+
         form.reset();
         navigate(location?.state ? location.state : '/');
       })

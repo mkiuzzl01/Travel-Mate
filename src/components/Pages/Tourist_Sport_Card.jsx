@@ -18,8 +18,6 @@ const Tourist_Sport_Card = ({ sport }) => {
     photo,
     total_visitor,
     seasonal,
-    userName,
-    userEmail,
   } = sport;
   return (
     <div data-aos="zoom-in">
@@ -55,23 +53,17 @@ const Tourist_Sport_Card = ({ sport }) => {
             </p>
           </div>
           <h2 className="text-2xl font-bold font-Merriweather">
-            {country_Name}
+            {sport_name}
           </h2>
-          <p className="text-lg font-medium">{sport_name}</p>
+          <p className="text-lg font-medium">{location}</p>
           <p className="font-PT_Sans">{description}</p>
           <div>
             <p className="flex items-center font-semibold space-x-2">
               <span className="text-lg">
                 <IoLocationSharp />
               </span>{" "}
-              <span>{location}</span>
+              <span>{country_Name}</span>
             </p>
-            {/* <p className="flex items-center space-x-1 ">
-              <span>
-                <LiaIdCard className="text-lg" />
-              </span>
-              <span>{userName}</span>
-            </p> */}
           </div>
           <div className="card-actions justify-center">
             <Link to={`/View_Details/${_id}`}>
