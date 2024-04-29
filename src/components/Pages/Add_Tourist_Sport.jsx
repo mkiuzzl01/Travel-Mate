@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const Add_Tourist_Sport = () => {
     const [select,setSelect] = useState();
@@ -57,7 +58,10 @@ const Add_Tourist_Sport = () => {
    })
   };
   return (
-    <div className="max-w-4xl m-auto bg-[#F4F3F0] p-6 my-4 ">
+    <div className="max-w-4xl m-auto bg-gradient-to-b from-teal-500 to-teal-300 p-6 my-4 ">
+      <Helmet>
+          <title>Travel-Mate | Add Tourist Sport </title>
+      </Helmet>
       <div>
         <div className="space-y-4 mb-4">
           <h1 className="text-4xl text-center dark:text-black">Add Tourist Sport</h1>

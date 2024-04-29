@@ -1,4 +1,5 @@
 
+import { Helmet } from "react-helmet";
 import Tourist_Sport_Card from "./Tourist_Sport_Card";
 import { useEffect, useState } from "react";
 
@@ -34,6 +35,9 @@ const All_Tourists_Spot = () => {
   return (
     <div>
       <div className="text-center my-4">
+      <Helmet>
+          <title>Travel-Mate | All Tourist Spots </title>
+      </Helmet>
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn m-1">
             Short by

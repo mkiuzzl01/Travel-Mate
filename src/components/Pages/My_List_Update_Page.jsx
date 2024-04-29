@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -61,6 +62,9 @@ const My_List_Update_Page = () => {
   };
   return (
     <div className="max-w-4xl m-auto bg-[#F4F3F0] p-6 my-4 ">
+      <Helmet>
+          <title>Travel-Mate | Update Tourist Spot </title>
+      </Helmet>
       <div>
         <div className="space-y-4 mb-4">
           <h1 className="text-4xl text-center dark:text-black">

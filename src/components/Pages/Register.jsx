@@ -4,6 +4,7 @@ import { LuEyeOff } from "react-icons/lu";
 import { FiEye } from "react-icons/fi";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
   const [showPass, setShowPass] = useState(false);
@@ -59,9 +60,9 @@ const Register = () => {
         className="flex flex-col lg:flex-row md:justify-center items-center bg-gradient-to-b from-teal-500 to-teal-300   rounded-lg my-4 p-4 font-PT_Sans"
         data-aos="flip-up"
       >
-        {/* <Helmet>
-        <title>Cozy-Life-Style | Register </title>
-      </Helmet> */}
+        <Helmet>
+          <title>Travel-Mate | Register </title>
+      </Helmet>
         <div>
           <img src="https://i.ibb.co/rx78H9q/Brazuca-Planning-1.png" alt="" />
         </div>

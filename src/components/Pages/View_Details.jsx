@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { useLoaderData } from "react-router-dom";
 
 const View_Details = () => {
@@ -8,9 +9,9 @@ const View_Details = () => {
       className="grid grid-cols-1 lg:grid-cols-2 items-center p-2 font-PT_Sans"
       data-aos="zoom-out"
     >
-      {/* <Helmet>
-        <title>Cozy-Life-Style | State Details </title>
-      </Helmet> */}
+      <Helmet>
+        <title>Travel-Mate | Sport Details </title>
+      </Helmet>
       <div className="bg-[#1313130D] p-8 flex justify-center items-center">
         <img src={sport.photo} className="" alt="" />
       </div>

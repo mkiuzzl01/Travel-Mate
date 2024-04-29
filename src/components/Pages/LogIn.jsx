@@ -4,6 +4,7 @@ import { LuEyeOff } from "react-icons/lu";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const LogIn = () => {
   const [showPass, setShowPass] = useState(false);
@@ -47,6 +48,7 @@ const LogIn = () => {
         icon: 'success',
         confirmButtonText: 'Ok'
       })
+      navigate(location?.state ? location.state : "/");
     })
     .catch(error=>{
       console.error(error);
@@ -62,6 +64,7 @@ const LogIn = () => {
         icon: 'success',
         confirmButtonText: 'Ok'
       })
+      navigate(location?.state ? location.state : "/");
     })
     .catch(error=>{
       console.error(error);
@@ -72,15 +75,15 @@ const LogIn = () => {
       className="flex flex-col lg:flex-row md:justify-center items-center bg-gradient-to-b from-teal-500 to-teal-300 rounded-lg my-4 p-4 font-PT_Sans "
       data-aos="flip-down"
     >
-      {/* <Helmet>
-        <title>Cozy-Life-Style | Login </title>
-      </Helmet> */}
+      <Helmet>
+        <title>Travel-Mate | Login </title>
+      </Helmet>
       <div>
         <img src="https://i.ibb.co/ZhJ8g1h/Hands-Unlocked.png" alt="" />
       </div>
-      <div className="w-full lg:w-1/2 space-y-3 rounded-xl bg-transparent text-yellow-200">
+      <div className="w-full lg:w-1/2 space-y-3 rounded-xl bg-transparent ">
         <form onSubmit={handleLogIn} className="card-body ">
-          <h1 className="text-4xl font-bold text-center">Login</h1>
+          <h1 className="text-4xl font-bold text-center text-yellow-200">Login</h1>
           <div className="form-control">
             <span className="text-white">Email:</span>
             <label htmlFor="Email" className="input w-full  flex items-center">
@@ -90,7 +93,7 @@ const LogIn = () => {
                 id="Email"
                 placeholder="Email"
                 required
-                className="text-black grow"
+                className="grow"
               />
             </label>
           </div>
@@ -106,14 +109,14 @@ const LogIn = () => {
                 id="Password"
                 placeholder="Password"
                 required
-                className="grow text-black"
+                className="grow"
               />
               <div>
                 <span onClick={() => setShowPass(!showPass)}>
                   {showPass ? (
-                    <LuEyeOff className="text-black" />
+                    <LuEyeOff/>
                   ) : (
-                    <FiEye className="text-black" />
+                    <FiEye />
                   )}
                 </span>
               </div>
