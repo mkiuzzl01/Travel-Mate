@@ -18,7 +18,7 @@ const router = createBrowserRouter([
         children:[
             {
                 path:'/',
-                loader:()=> fetch('http://localhost:5000/Tourist_Sports'),
+                loader:()=> fetch("http://localhost:5000/Tourist_Sports"),
                 element:<Home></Home>
             },
             {
@@ -32,7 +32,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/Update_Tourist_Sport/:id',
-                loader:({params})=> fetch(`http://localhost:5000/Tourist_Sports/${params.id}`),
+                loader:({params})=> fetch(`http://localhost:5000/${params.id}`),
                 element:<PrivateRoute><My_List_Update_Page></My_List_Update_Page></PrivateRoute>
             },
             {

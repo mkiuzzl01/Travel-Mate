@@ -11,7 +11,7 @@ const My_List = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:5000/My_List/${user?.email}`)
+      fetch(`https://travel-mate-server-15a60d9z7.vercel.app/My_List/${user?.email}`)
         .then((res) => res.json())
         .then((data) => {
           setMyData(data);
