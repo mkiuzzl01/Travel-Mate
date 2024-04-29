@@ -5,6 +5,7 @@ import Not_Found from "../Pages/Not_Found";
 import React, { Suspense } from "react";
 import Loading from "../Layout/Loading";
 
+
 const Home = React.lazy(() => import("../Pages/Home"));
 const All_Tourists_Spot = React.lazy(() =>
   import("../Pages/All_Tourists_Spot")
@@ -19,6 +20,12 @@ const Add_Tourist_Sport = React.lazy(() =>
 const My_List = React.lazy(() => import("../Pages/My_List"));
 const LogIn = React.lazy(() => import("../Pages/LogIn"));
 const Register = React.lazy(() => import("../Pages/Register"));
+const Bangladesh = React.lazy(() => import("../Countries/Bangladesh"));
+const Thailand = React.lazy(() => import("../Countries/Thailand"));
+const Indonesia = React.lazy(() => import("../Countries/Indonesia"));
+const Malaysia = React.lazy(() => import("../Countries/Malaysia"));
+const Vietnam = React.lazy(() => import("../Countries/Vietnam"));
+const Cambodia = React.lazy(() => import("../Countries/Cambodia"));
 
 const router = createBrowserRouter([
   {
@@ -98,6 +105,54 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<Loading></Loading>}>
             <Register></Register>,
+          </Suspense>
+        ),
+      },
+      {
+        path: "/Bangladesh",
+        element: (
+          <Suspense fallback={<Loading></Loading>}>
+            <Bangladesh></Bangladesh>
+          </Suspense>
+        ),
+      },
+      {
+        path: "/Thailand",
+        element: (
+          <Suspense fallback={<Loading></Loading>}>
+            <Thailand></Thailand>
+          </Suspense>
+        ),
+      },
+      {
+        path: "/Indonesia",
+        element: (
+          <Suspense fallback={<Loading></Loading>}>
+            <Indonesia></Indonesia>
+          </Suspense>
+        ),
+      },
+      {
+        path: "/Malaysia",
+        element: (
+          <Suspense fallback={<Loading></Loading>}>
+            <Malaysia></Malaysia>
+          </Suspense>
+        ),
+      },
+      {
+        path: "/Vietnam",
+        element: (
+          <Suspense fallback={<Loading></Loading>}>
+            <Vietnam></Vietnam>
+          </Suspense>
+        ),
+      },
+      {
+        path: "/Cambodia",
+        element: (
+          <Suspense fallback={<Loading></Loading>}>
+            <Cambodia></Cambodia>
           </Suspense>
         ),
       },

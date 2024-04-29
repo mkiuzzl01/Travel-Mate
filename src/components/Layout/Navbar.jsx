@@ -44,7 +44,7 @@ const Navbar = () => {
         }
         to="/"
       >
-        Home
+        HOME
       </NavLink>
       <NavLink
         className={({ isActive }) =>
@@ -54,7 +54,7 @@ const Navbar = () => {
         }
         to="/All_Tourists_Spot"
       >
-        All Tourists Spot
+        ALL TOURISTS SPOTS
       </NavLink>
       <NavLink
         className={({ isActive }) =>
@@ -64,7 +64,7 @@ const Navbar = () => {
         }
         to="/Add_Tourist_Sport"
       >
-        Add Tourists Spot
+        ADD TOURISTS SPOT
       </NavLink>
       {user && (
         <NavLink
@@ -75,7 +75,7 @@ const Navbar = () => {
           }
           to='/My_List'
         >
-          My List
+          MY LIST
         </NavLink>
       )}
     </>

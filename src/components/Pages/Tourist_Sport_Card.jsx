@@ -21,7 +21,7 @@ const Tourist_Sport_Card = ({ sport }) => {
   } = sport;
   return (
     <div data-aos="zoom-in">
-      <div className="card card-compact bg-base-100 border-2 shadow-lg">
+      <div className="card card-compact bg-base-100 border-2">
         <figure>
           <img src={photo} alt={sport_name} className="w-full lg:h-80" />
         </figure>

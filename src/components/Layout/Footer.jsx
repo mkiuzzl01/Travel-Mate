@@ -14,11 +14,12 @@ const Footer = () => {
   </aside>
   </aside> 
   <nav>
-    <h6 className="footer-title">Services</h6> 
-    <a className="link link-hover">Branding</a>
-    <a className="link link-hover">Design</a>
-    <a className="link link-hover">Marketing</a>
-    <a className="link link-hover">Advertisement</a>
+    <h6 className="footer-title">Contact Info</h6> 
+    <p><span className="font-medium">Phone:</span> +8801757433007</p>
+    <p><span className="font-medium">Email:</span> mkiuzzal007@gmail.com</p>
+    <p><span className="font-medium">Street:</span> Ghulshan-1,Euro Tower</p>
+    <p><span className="font-medium">Location:</span> Dhaka,Bangladesh</p>
+    
   </nav> 
   <nav>
     <h6 className="footer-title">Company</h6> 
