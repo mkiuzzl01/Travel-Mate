@@ -45,14 +45,34 @@ const LogIn = () => {
 
   const handleLogInGoogle = ()=>{
     logInWithGoogle()
-    .then(()=>{
+    .then((result)=>{
       Swal.fire({
         title: 'Success!',
         text: 'User LogIn Successfully!',
         icon: 'success',
         confirmButtonText: 'Ok'
       })
+
+      //inset to database
       navigate(location?.state ? location.state : "/");
+      const name = result.user?.displayName;
+      const email = result.user?.email;
+      const photoURL = result.user?.photoURL;
+      const lastSign = result?.user.metadata.lastSignInTime;
+      const info = {name,email,photoURL,lastSign}
+
+      fetch("http://localhost:5000/Users", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body:JSON.stringify(info),
+        })
+        .then(res=>res.json())
+        .then(data=>{
+          console.log(data);
+        })
+
     })
     .catch(()=>{
       setError("Something wrong");
@@ -64,7 +84,7 @@ const LogIn = () => {
 
   const handleLogInGithub = ()=>{
     logInWithGithub()
-    .then(()=>{
+    .then((result)=>{
       Swal.fire({
         title: 'Success!',
         text: 'User LogIn Successfully!',
@@ -72,6 +92,26 @@ const LogIn = () => {
         confirmButtonText: 'Ok'
       })
       navigate(location?.state ? location.state : "/");
+
+      //inset to database
+      const name = result.user?.displayName;
+      const email = result.user?.email;
+      const photoURL = result.user?.photoURL;
+      const lastSign = result?.user.metadata.lastSignInTime;
+      const info = {name,email,photoURL,lastSign}
+
+      fetch("http://localhost:5000/Users", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body:JSON.stringify(info),
+        })
+        .then(res=>res.json())
+        .then(data=>{
+          console.log(data);
+        })
+
     })
     .catch(()=>{
       toast.error("Something Wrong!", {

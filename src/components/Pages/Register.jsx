@@ -5,7 +5,7 @@ import { FiEye } from "react-icons/fi";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
-import { toast, ToastContainer } from 'react-toastify';
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
@@ -18,56 +18,71 @@ const Register = () => {
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
-    const Name = form.name;
+    const Name = form.name.value;
     const Email = form.email.value;
     const PhotoURL = form.image.value;
     const Password = form.password.value;
-    console.log(Name, Email, PhotoURL, Password);
+    const userData = {Name,Email,PhotoURL,Password };
 
     setError();
     if (Password.length < 6) {
       toast.error("Something Wrong!", {
-        position: "bottom-center"
+        position: "bottom-center",
       });
       return setError("Password must be at least 6 character or longer");
-
     } else if (!/[A-Z]/.test(Password)) {
       toast.error("Something Wrong!", {
-        position: "bottom-center"
+        position: "bottom-center",
       });
       return setError("Should contain at least one upper case");
     } else if (!/[a-z]/.test(Password)) {
       toast.error("Something Wrong!", {
-        position: "bottom-center"
+        position: "bottom-center",
       });
       return setError("Should contain at least one lower case");
     }
 
+   
     registerUser(Email, Password)
       .then(() => {
+
         updateUser(Name, PhotoURL)
           .then(() => {})
           .catch((error) => {
             console.error(error);
           });
-        
-          Swal.fire({
-            title: 'Success!',
-            text: 'User Registration Successfully!',
-            icon: 'success',
-            confirmButtonText: 'Ok'
-          })
+
+        Swal.fire({
+          title: "Success!",
+          text: "User Registration Successfully!",
+          icon: "success",
+          confirmButtonText: "Ok",
+        });
 
         form.reset();
-        navigate(location?.state ? location.state : '/');
+        navigate(location?.state ? location.state : "/");
+
+        fetch("http://localhost:5000/Users", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body:JSON.stringify(userData),
+        })
+        .then(res=>res.json())
+        .then(data=>{
+          console.log(data);
+        })
+
       })
       .catch((error) => {
         toast.error("Something Wrong!", {
-          position: "bottom-center"
+          position: "bottom-center",
         });
-        setError(error.message.split("/")[1].split(")"));
+        return setError(error.message.split("/")[1].split(")"));
       });
   };
+
   return (
     <div>
       <div
@@ -77,7 +92,7 @@ const Register = () => {
         <ToastContainer />
         <Helmet>
           <title>Travel-Mate | Register </title>
-      </Helmet>
+        </Helmet>
         <div>
           <img src="https://i.ibb.co/rx78H9q/Brazuca-Planning-1.png" alt="" />
         </div>

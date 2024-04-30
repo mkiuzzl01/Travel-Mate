@@ -68,6 +68,7 @@ const AuthProvider = ({ children }) => {
     logInWithGithub,
     logOut,
     updateUser,
+    setLoading
   };
   return (
     <div>

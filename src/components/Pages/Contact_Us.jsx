@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { Helmet } from "react-helmet";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Contact_Us = () => {
+    const {user} = useContext(AuthContext);
   const handleContact = (e) => {
     e.preventDefault();
     alert("data submitted");
@@ -8,7 +11,7 @@ const Contact_Us = () => {
   return (
     <div>
       <div className="my-4" data-aos="zoom-out">
-        <section className="rounded-lg bg-[url(https://reno.wpresidence.net/wp-content/uploads/2023/08/background-building.png)] bg-no-repeat">
+        <section className="rounded-lg bg-[url(https://i.postimg.cc/j5Vjf3Qg/johann-siemens-EPy0g-BJzz-ZU-unsplash.jpg)]  bg-no-repeat bg-cover bg-center">
           <div className="grid items-center grid-cols-1 p-10 mx-auto md:grid-cols-2 md:divide-x text-white bg-opacity-50 bg-slate-700 rounded-lg">
             <div className="py-6 md:py-0 md:px-6">
               <h1 className="text-4xl font-bold text-yellow-200">
@@ -31,7 +34,7 @@ const Contact_Us = () => {
                       clipRule="evenodd"
                     ></path>
                   </svg>
-                  <span>Fake address, 9999 City</span>
+                  <span>Ghulshan-1,Euro Tower</span>
                 </p>
                 <p className="flex items-center">
                   <svg
@@ -42,7 +45,7 @@ const Contact_Us = () => {
                   >
                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
                   </svg>
-                  <span>123456789</span>
+                  <span>+8801757433007</span>
                 </p>
                 <p className="flex items-center">
                   <svg
@@ -54,7 +57,7 @@ const Contact_Us = () => {
                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
                   </svg>
-                  <span>contact@business.com</span>
+                  <span>mkiuzzal007@gmail.com</span>
                 </p>
               </div>
             </div>
@@ -67,7 +70,8 @@ const Contact_Us = () => {
                 <span className="mb-1">Full name</span>
                 <input
                   type="text"
-                  placeholder="Leroy Jenkins"
+                  defaultValue={user? user?.displayName : ''}
+                  placeholder="Enter Your Name"
                   required
                   className="block input w-full text-black "
                 />
@@ -77,7 +81,8 @@ const Contact_Us = () => {
                 <input
                   type="email"
                   required
-                  placeholder="leroy@jenkins.com"
+                  defaultValue={user? user?.email : ''}
+                  placeholder="Enter Your Email"
                   className="block w-full input text-black"
                 />
               </label>
