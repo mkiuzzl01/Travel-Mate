@@ -3,6 +3,8 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
+import Aos from "aos";
+import 'aos/dist/aos.css'
 
 const My_List = () => {
   const { user } = useContext(AuthContext);
@@ -10,13 +12,18 @@ const My_List = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:5000/My_List/${user?.email}`)
+      fetch(`https://travel-mate-server-theta.vercel.app/My_List/${user?.email}`)
         .then((res) => res.json())
         .then((data) => {
           setMyData(data);
         });
     }
   }, [user.email]);
+
+  useEffect(()=>{
+    Aos.init({duration:1000});
+  },[])
+
 
   const handleDelete = (_id) => {
     Swal.fire({
@@ -29,7 +36,7 @@ const My_List = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/Tourist_Sports/${_id}`, {
+        fetch(`https://travel-mate-server-theta.vercel.app/Tourist_Sports/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -48,7 +55,7 @@ const My_List = () => {
     });
   };
   return (
-    <div>
+    <div className="my-8" data-aos="zoom-in">
       <div className="overflow-x-auto">
       <Helmet>
           <title>Travel-Mate | My List </title>
@@ -56,7 +63,7 @@ const My_List = () => {
         <table className="table">
           {/* head */}
           <thead>
-            <tr>
+            <tr className="bg-slate-100">
               <th>SL</th>
               <th>Sport Name</th>
               <th>Location</th>
@@ -67,6 +74,7 @@ const My_List = () => {
               <th>Country Name</th>
               <th>Image</th>
               <th>Action</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>

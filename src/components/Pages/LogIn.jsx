@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FiEye } from "react-icons/fi";
 import { LuEyeOff } from "react-icons/lu";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -7,6 +7,8 @@ import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import Aos from "aos";
+import 'aos/dist/aos.css'
 
 const LogIn = () => {
   const [showPass, setShowPass] = useState(false);
@@ -61,7 +63,7 @@ const LogIn = () => {
       const lastSign = result?.user.metadata.lastSignInTime;
       const info = {name,email,photoURL,lastSign}
 
-      fetch("http://localhost:5000/Users", {
+      fetch("https://travel-mate-server-theta.vercel.app/Users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -100,7 +102,7 @@ const LogIn = () => {
       const lastSign = result?.user.metadata.lastSignInTime;
       const info = {name,email,photoURL,lastSign}
 
-      fetch("http://localhost:5000/Users", {
+      fetch("https://travel-mate-server-theta.vercel.app/Users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -120,6 +122,11 @@ const LogIn = () => {
       setError("Something wrong");
     })
   }
+
+  useEffect(()=>{
+    Aos.init({duration:1000});
+  },[])
+  
   return (
     <div
       className="flex flex-col lg:flex-row md:justify-center items-center bg-gradient-to-b from-teal-500 to-teal-300 rounded-lg my-4 p-4 font-PT_Sans "

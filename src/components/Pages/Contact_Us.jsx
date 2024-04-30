@@ -1,26 +1,39 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
+import Aos from "aos";
+import 'aos/dist/aos.css'
 
 const Contact_Us = () => {
     const {user} = useContext(AuthContext);
   const handleContact = (e) => {
     e.preventDefault();
-    alert("data submitted");
+    Swal.fire({
+      title: 'Success!',
+      text: 'Your Query Submitted Successfully!',
+      icon: 'success',
+      confirmButtonText: 'Ok'
+    })
   };
+
+  useEffect(()=>{
+    Aos.init({duration:1000});
+  },[])
+  
   return (
     <div>
-      <div className="my-4" data-aos="zoom-out">
+      <div className="my-4" data-aos="zoom-in">
         <section className="rounded-lg bg-[url(https://i.postimg.cc/j5Vjf3Qg/johann-siemens-EPy0g-BJzz-ZU-unsplash.jpg)]  bg-no-repeat bg-cover bg-center">
-          <div className="grid items-center grid-cols-1 p-10 mx-auto md:grid-cols-2 md:divide-x text-white bg-opacity-50 bg-slate-700 rounded-lg">
+          <div className="grid items-center grid-cols-1 p-10 mx-auto md:grid-cols-2 md:divide-x bg-opacity-50 bg-slate-700 rounded-lg">
             <div className="py-6 md:py-0 md:px-6">
               <h1 className="text-4xl font-bold text-yellow-200">
                 Get in touch
               </h1>
-              <p className="pt-2 pb-4">
+              <p className="pt-2 pb-4 text-white">
                 Fill in the form to start a conversation
               </p>
-              <div className="space-y-4">
+              <div className="space-y-4 text-white">
                 <p className="flex items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -67,31 +80,31 @@ const Contact_Us = () => {
               className="flex flex-col py-6 space-y-6 md:py-0 md:px-6"
             >
               <label className="block">
-                <span className="mb-1">Full name</span>
+                <span className="mb-1 text-white">Full name</span>
                 <input
                   type="text"
                   defaultValue={user? user?.displayName : ''}
                   placeholder="Enter Your Name"
                   required
-                  className="block input w-full text-black "
+                  className="block input w-full"
                 />
               </label>
               <label className="block">
-                <span className="mb-1">Email address</span>
+                <span className="mb-1 text-white">Email address</span>
                 <input
                   type="email"
                   required
                   defaultValue={user? user?.email : ''}
                   placeholder="Enter Your Email"
-                  className="block w-full input text-black"
+                  className="block w-full input "
                 />
               </label>
               <label className="block">
-                <span className="mb-1">Message</span>
+                <span className="mb-1 text-white">Message</span>
                 <textarea
                   rows="3"
                   required
-                  className="block w-full textarea text-black"
+                  className="block w-full textarea "
                 ></textarea>
               </label>
               <button className="block w-full p-3 text-center rounded-sm text-black bg-yellow-200  hover:bg-green-600">

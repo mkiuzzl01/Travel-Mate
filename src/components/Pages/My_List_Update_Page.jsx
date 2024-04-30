@@ -39,7 +39,7 @@ const My_List_Update_Page = () => {
     const info = {sport_name,country_Name,location,description,average_cost,travel_time,total_visitor,photo,seasonal,userEmail,userName}
     console.log(info);
 
-    fetch(`http://localhost:5000/Tourist_Sports/${_id}`,{
+    fetch(`https://travel-mate-server-theta.vercel.app/Tourist_Sports/${_id}`,{
             method:'PUT',
             headers:{
                 'content-type':'application/json'
@@ -213,8 +213,6 @@ const My_List_Update_Page = () => {
                 className="input input-bordered w-full"
               />
             </div>
-          </div>
-          <div className="space-y-6">
             <div className="form-control lg:col-span-2">
               <label htmlFor="photo">
                 <span className="dark:text-black">Photo URL:</span>
@@ -229,6 +227,9 @@ const My_List_Update_Page = () => {
                 className="input input-bordered w-full"
               />
             </div>
+          </div>
+          <div className="mt-8">
+            
             <div className="lg:col-span-2">
               <input
                 required

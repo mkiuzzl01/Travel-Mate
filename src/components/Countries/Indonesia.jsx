@@ -2,18 +2,27 @@ import { Helmet } from "react-helmet";
 import { IoIosTimer } from "react-icons/io";
 import { IoLocationSharp } from "react-icons/io5";
 import { Link, useLoaderData } from "react-router-dom";
-
+import 'animate.css';
+import Aos from "aos";
+import 'aos/dist/aos.css'
+import { useEffect } from "react";
 
 const Indonesia = () => {
-    const country = useLoaderData();
-    return (
-        <div>
-            <h1>Welcome to Indonesia</h1>
-            <div>
+  const country = useLoaderData();
+
+  useEffect(()=>{
+    Aos.init({duration:1000});
+  },[])
+  return (
+    <div data-aos="zoom-out">
+      <h1 className="text-center font-semibold text-3xl py-8 animate__animated animate__backInDown">
+        Welcome to Indonesia
+      </h1>
+      <div>
         <Helmet>
-          <title> Travel-Mate | Thailand </title>
+          <title> Travel-Mate | Indonesia </title>
         </Helmet>
-        <div className="grid gap-4 grid-cols-1 lg:grid-cols-3">
+        <div className="grid gap-4 grid-cols-1 my-8 lg:grid-cols-3">
           {country.map((count) => (
             <div key={count.id}>
               <div className="card card-compact bg-base-100 border-2">
@@ -63,8 +72,8 @@ const Indonesia = () => {
           ))}
         </div>
       </div>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Indonesia;

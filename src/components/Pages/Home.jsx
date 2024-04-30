@@ -1,11 +1,12 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import Tourist_Sport_Card from "./Tourist_Sport_Card";
 import { Helmet } from "react-helmet";
 import Banner from "../Layout/Banner";
 import Contact_Us from "./Contact_Us";
 import { useContext, useEffect, useState } from "react";
 import MyUsers from "./MyUsers";
-
+import Aos from "aos";
+import 'aos/dist/aos.css'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -27,7 +28,7 @@ const Home = () => {
 
   useEffect(() => {
     setLoading(true)
-    fetch("http://localhost:5000/Countries")
+    fetch("https://travel-mate-server-theta.vercel.app/Countries")
       .then((res) => res.json())
       .then((data) => {
         setCountries(data);
@@ -37,7 +38,7 @@ const Home = () => {
 
   useEffect(() => {
     setLoading(true)
-    fetch("http://localhost:5000/Users")
+    fetch("https://travel-mate-server-theta.vercel.app/Users")
       .then((res) => res.json())
       .then((data) => {
         setUsers(data);
@@ -45,6 +46,9 @@ const Home = () => {
       });
   }, [users]);
 
+  useEffect(()=>{
+    Aos.init({duration:1000});
+  },[])
 
   return (
     <div className="">
@@ -55,9 +59,9 @@ const Home = () => {
         <Banner></Banner>
       </div>
       <section>
-        <div className="my-8 text-center border-y-2 border-dashed py-8">
-          <h1 className="text-4xl font-semibold text-center">Tourists Spots</h1>
-          <p>
+        <div className="my-8 text-center border-y-2 border-dashed py-8 border-purple-400">
+          <h1 className="text-4xl font-semibold text-center font-serif">Tourists Spots</h1>
+          <p className="font-sans">
             At Travel Mate, we understand that no two travelers are alike.{" "}
             <br /> That's why we specialize in crafting personalized experiences
             that cater to your individual preferences and interests. <br />{" "}
@@ -68,7 +72,7 @@ const Home = () => {
           </p>
         </div>
       </section>
-      <section>
+      <section data-aos="zoom-out">
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 my-4">
           {sports.map((sport) => (
             <Tourist_Sport_Card
@@ -79,9 +83,9 @@ const Home = () => {
         </div>
       </section>
       <section>
-        <div className="my-8 text-center border-y-2 border-dashed py-8">
-          <h1 className="text-4xl font-semibold text-center">Countries</h1>
-          <p>
+        <div className="my-8 text-center border-y-2 border-dashed py-8 border-purple-400">
+          <h1 className="text-4xl font-semibold text-center font-serif">Countries</h1>
+          <p className="font-sans">
             At Travel Mate, we understand that no two travelers are alike.{" "}
             <br /> That's why we specialize in crafting personalized experiences
             that cater to your individual preferences and interests. <br />{" "}
@@ -92,7 +96,7 @@ const Home = () => {
           </p>
         </div>
       </section>
-      <section>
+      <section data-aos="flip-down">
         <div className="grid gap-4 grid-cols-1 lg:grid-cols-3 my-8">
         {
           countries.map(country=> <Country_Card key={country._id} country={country}></Country_Card>)
@@ -100,9 +104,9 @@ const Home = () => {
         </div>
       </section>
       <section>
-        <div className="my-8 text-center border-y-2 border-dashed py-8">
-          <h1 className="text-4xl font-semibold text-center">Our Client</h1>
-          <p>
+        <div className="my-8 text-center border-y-2 border-dashed py-8 border-purple-400">
+          <h1 className="text-4xl font-semibold text-center font-serif">Our Client</h1>
+          <p className="font-sans">
             At Travel Mate, we understand that no two travelers are alike.{" "}
             <br /> That's why we specialize in crafting personalized experiences
             that cater to your individual preferences and interests. <br />{" "}

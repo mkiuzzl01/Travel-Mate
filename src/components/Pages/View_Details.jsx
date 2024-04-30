@@ -1,16 +1,23 @@
 import { Helmet } from "react-helmet";
 import { useLoaderData } from "react-router-dom";
+import Aos from "aos";
+import 'aos/dist/aos.css'
+import { useEffect } from "react";
 
 const View_Details = () => {
   const sport = useLoaderData();
 
+  useEffect(()=>{
+    Aos.init({duration:1000});
+  },[])
+  
   return (
     <div
-      className="grid grid-cols-1 lg:grid-cols-2 items-center p-2 font-PT_Sans"
+      className="grid grid-cols-1 lg:grid-cols-2 items-center m-4 rounded-lg border-green-500 border-2 p-2"
       data-aos="zoom-out"
     >
       <Helmet>
-        <title>Travel-Mate | Sport Details </title>
+        <title>Travel-Mate | Spot Details </title>
       </Helmet>
       <div className="bg-[#1313130D] p-8 flex justify-center items-center">
         <img src={sport.photo} className="" alt="" />

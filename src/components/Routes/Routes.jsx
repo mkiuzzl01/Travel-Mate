@@ -37,7 +37,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        loader: () => fetch("http://localhost:5000/Tourist_Sports"),
+        loader: () => fetch("https://travel-mate-server-theta.vercel.app/Tourist_Sports"),
         element: (
           <Suspense fallback={<Loading></Loading>}>
             <Home></Home>
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
       {
         path: "/View_Details/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/Tourist_Sports/${params.id}`),
+          fetch(`https://travel-mate-server-theta.vercel.app/Tourist_Sports/${params.id}`),
         element: (
           <PrivateRoute>
             <Suspense fallback={<Loading></Loading>}>
@@ -67,7 +67,7 @@ const router = createBrowserRouter([
       {
         path: "/Update_Tourist_Sport/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/Tourist_Sports/${params.id}`),
+          fetch(`https://travel-mate-server-theta.vercel.app/Tourist_Sports/${params.id}`),
         element: (
           <PrivateRoute>
             <Suspense fallback={<Loading></Loading>}>
@@ -122,7 +122,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/Bangladesh",
-        loader:()=> fetch('/Bangladesh.json'),
+        loader: () => fetch("/Bangladesh.json"),
         element: (
           <Suspense fallback={<Loading></Loading>}>
             <Bangladesh></Bangladesh>
@@ -134,21 +134,21 @@ const router = createBrowserRouter([
         loader: async (params) => {
           return axios.get("/Bangladesh.json").then((data) => {
             const country = data.data;
-            const info = country.find(
-              (count) => count.id == params.params.id
-            );
+            const info = country.find((count) => count.id == params.params.id);
             return info;
           });
         },
         element: (
-          <Suspense fallback={<Loading></Loading>}>
-            <View_Country></View_Country>
-          </Suspense>
+          <PrivateRoute>
+            <Suspense fallback={<Loading></Loading>}>
+              <View_Country></View_Country>
+            </Suspense>
+          </PrivateRoute>
         ),
       },
       {
         path: "/Thailand",
-        loader:()=> fetch('/Thailand.json'),
+        loader: () => fetch("/Thailand.json"),
         element: (
           <Suspense fallback={<Loading></Loading>}>
             <Thailand></Thailand>
@@ -160,21 +160,21 @@ const router = createBrowserRouter([
         loader: async (params) => {
           return axios.get("/Thailand.json").then((data) => {
             const country = data.data;
-            const info = country.find(
-              (count) => count.id == params.params.id
-            );
+            const info = country.find((count) => count.id == params.params.id);
             return info;
           });
         },
         element: (
-          <Suspense fallback={<Loading></Loading>}>
-            <View_Country></View_Country>
-          </Suspense>
+          <PrivateRoute>
+            <Suspense fallback={<Loading></Loading>}>
+              <View_Country></View_Country>
+            </Suspense>
+          </PrivateRoute>
         ),
       },
       {
         path: "/Indonesia",
-        loader:()=> fetch('/Indonesia.json'),
+        loader: () => fetch("/Indonesia.json"),
         element: (
           <Suspense fallback={<Loading></Loading>}>
             <Indonesia></Indonesia>
@@ -186,22 +186,22 @@ const router = createBrowserRouter([
         loader: async (params) => {
           return axios.get("/Indonesia.json").then((data) => {
             const country = data.data;
-            const info = country.find(
-              (count) => count.id == params.params.id
-            );
+            const info = country.find((count) => count.id == params.params.id);
             return info;
           });
         },
         element: (
-          <Suspense fallback={<Loading></Loading>}>
-            <View_Country></View_Country>
-          </Suspense>
+          <PrivateRoute>
+            <Suspense fallback={<Loading></Loading>}>
+              <View_Country></View_Country>
+            </Suspense>
+          </PrivateRoute>
         ),
       },
-      
+
       {
         path: "/Malaysia",
-        loader:()=> fetch('/Malaysia.json'),
+        loader: () => fetch("/Malaysia.json"),
         element: (
           <Suspense fallback={<Loading></Loading>}>
             <Malaysia></Malaysia>
@@ -213,21 +213,21 @@ const router = createBrowserRouter([
         loader: async (params) => {
           return axios.get("/Malaysia.json").then((data) => {
             const country = data.data;
-            const info = country.find(
-              (count) => count.id == params.params.id
-            );
+            const info = country.find((count) => count.id == params.params.id);
             return info;
           });
         },
         element: (
-          <Suspense fallback={<Loading></Loading>}>
-            <View_Country></View_Country>
-          </Suspense>
+          <PrivateRoute>
+            <Suspense fallback={<Loading></Loading>}>
+              <View_Country></View_Country>
+            </Suspense>
+          </PrivateRoute>
         ),
       },
       {
         path: "/Vietnam",
-        loader:()=> fetch('/Vietnam.json'),
+        loader: () => fetch("/Vietnam.json"),
         element: (
           <Suspense fallback={<Loading></Loading>}>
             <Vietnam></Vietnam>
@@ -239,21 +239,21 @@ const router = createBrowserRouter([
         loader: async (params) => {
           return axios.get("/Vietnam.json").then((data) => {
             const country = data.data;
-            const info = country.find(
-              (count) => count.id == params.params.id
-            );
+            const info = country.find((count) => count.id == params.params.id);
             return info;
           });
         },
         element: (
-          <Suspense fallback={<Loading></Loading>}>
-            <View_Country></View_Country>
-          </Suspense>
+          <PrivateRoute>
+            <Suspense fallback={<Loading></Loading>}>
+              <View_Country></View_Country>
+            </Suspense>
+          </PrivateRoute>
         ),
       },
       {
         path: "/Cambodia",
-        loader:()=> fetch('/Cambodia.json'),
+        loader: () => fetch("/Cambodia.json"),
         element: (
           <Suspense fallback={<Loading></Loading>}>
             <Cambodia></Cambodia>
@@ -265,16 +265,16 @@ const router = createBrowserRouter([
         loader: async (params) => {
           return axios.get("/Cambodia.json").then((data) => {
             const country = data.data;
-            const info = country.find(
-              (count) => count.id == params.params.id
-            );
+            const info = country.find((count) => count.id == params.params.id);
             return info;
           });
         },
         element: (
-          <Suspense fallback={<Loading></Loading>}>
-            <View_Country></View_Country>
-          </Suspense>
+          <PrivateRoute>
+            <Suspense fallback={<Loading></Loading>}>
+              <View_Country></View_Country>
+            </Suspense>
+          </PrivateRoute>
         ),
       },
     ],

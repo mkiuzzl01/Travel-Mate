@@ -1,30 +1,36 @@
 import { Helmet } from "react-helmet";
 import Tourist_Sport_Card from "./Tourist_Sport_Card";
 import { useEffect, useState } from "react";
+import Aos from "aos";
+import 'aos/dist/aos.css'
 
 const All_Tourists_Spot = () => {
   const [sports, setSpots] = useState([]);
   console.log(sports);
 
   useEffect(() => {
-    fetch("http://localhost:5000/Tourist_Sports")
+    fetch("https://travel-mate-server-theta.vercel.app/Tourist_Sports")
       .then((res) => res.json())
       .then((data) => setSpots(data));
   }, []);
 
   const minCost = () => {
-    fetch("http://localhost:5000/minCost")
+    fetch("https://travel-mate-server-theta.vercel.app/minCost")
       .then((res) => res.json())
       .then((data) => setSpots(Array.from(data)));
   };
   const maxCost = () => {
-    fetch("http://localhost:5000/maxCost")
+    fetch("https://travel-mate-server-theta.vercel.app/maxCost")
       .then((res) => res.json())
       .then((data) => setSpots(Array.from(data)));
   };
 
+  useEffect(()=>{
+    Aos.init({duration:1000});
+  },[])
+  
   return (
-    <div>
+    <div data-aos="zoom-out">
       <div className="text-center my-4">
         <Helmet>
           <title>Travel-Mate | All Tourist Spots </title>

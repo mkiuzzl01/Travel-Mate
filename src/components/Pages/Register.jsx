@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { LuEyeOff } from "react-icons/lu";
 import { FiEye } from "react-icons/fi";
@@ -7,6 +7,8 @@ import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Aos from "aos";
+import 'aos/dist/aos.css'
 
 const Register = () => {
   const [showPass, setShowPass] = useState(false);
@@ -58,11 +60,10 @@ const Register = () => {
           icon: "success",
           confirmButtonText: "Ok",
         });
-
-        form.reset();
         navigate(location?.state ? location.state : "/");
+        form.reset();
 
-        fetch("http://localhost:5000/Users", {
+        fetch("https://travel-mate-server-theta.vercel.app/Users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -73,7 +74,6 @@ const Register = () => {
         .then(data=>{
           console.log(data);
         })
-
       })
       .catch((error) => {
         toast.error("Something Wrong!", {
@@ -83,6 +83,9 @@ const Register = () => {
       });
   };
 
+  useEffect(()=>{
+    Aos.init({duration:1000});
+  },[])
   return (
     <div>
       <div

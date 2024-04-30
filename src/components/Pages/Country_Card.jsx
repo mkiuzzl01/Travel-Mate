@@ -1,8 +1,10 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { IoIosArrowRoundForward } from "react-icons/io";
+import { Helmet } from "react-helmet";
 
 const Country_Card = ({country}) => {
-    const {_id,countryName,description,image} = country;
+    const {countryName,description,image} = country;
   return (
     <div>
       <Link to={`${countryName}`}>
@@ -21,6 +23,10 @@ const Country_Card = ({country}) => {
                {description}
               </p>
             </div>
+          <div className="flex items-center justify-center p-4">
+            <p>click me</p>
+          <p><IoIosArrowRoundForward className="text-4xl text-green-500" /></p>
+          </div>
           </div>
         </div>
       </Link>

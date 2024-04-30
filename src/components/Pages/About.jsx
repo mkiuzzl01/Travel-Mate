@@ -1,13 +1,20 @@
 import { Helmet } from "react-helmet";
+import Aos from "aos";
+import 'aos/dist/aos.css'
+import { useEffect } from "react";
+
 
 const About = () => {
+  useEffect(()=>{
+    Aos.init({duration:1000});
+  },[])
   return (
-    <div className="space-y-6 py-10">
+    <div className="space-y-6 py-10" data-aos="zoom-in">
       <Helmet>
         <title> Travel-Mate | About Us </title>
       </Helmet>
       <div>
-        <h1 className="text-3xl font-semibold font-mono">
+        <h1 className="text-3xl font-semibold font-serif">
           Welcome to Travel-Mate
         </h1>
         <p>
@@ -18,7 +25,7 @@ const About = () => {
         </p>
       </div>
       <div>
-        <h1 className="text-3xl font-semibold font-mono">Our Mission:</h1>
+        <h1 className="text-3xl font-semibold font-serif">Our Mission:</h1>
         <p>
           At Travel-Mate, our mission is simple yet profound: to inspire and
           empower travelers to discover the world in all its splendor. We
@@ -28,7 +35,7 @@ const About = () => {
         </p>
       </div>
       <div>
-        <h1 className="text-3xl font-semibold font-mono">What We Do:</h1>
+        <h1 className="text-3xl font-semibold font-serif">What We Do:</h1>
         <p>
           As a premier destination management company, we specialize in curating
           bespoke travel experiences tailored to the unique preferences and
@@ -38,7 +45,7 @@ const About = () => {
         </p>
       </div>
       <div>
-        <h1 className="text-3xl font-semibold font-mono">Our Approach:</h1>
+        <h1 className="text-3xl font-semibold font-serif">Our Approach:</h1>
         <p>
           What sets us apart is our personalized approach to travel management.
           We understand that no two travelers are alike, which is why we take

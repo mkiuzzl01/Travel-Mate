@@ -1,11 +1,18 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
+import { IoMdAdd } from "react-icons/io";
+import Aos from "aos";
+import 'aos/dist/aos.css'
 
 const Add_Tourist_Sport = () => {
     const [select,setSelect] = useState();
     const {user} = useContext(AuthContext);
+
+    useEffect(()=>{
+      Aos.init({duration:1000});
+    },[])
 
   const addTouristSport = (e) => {
     e.preventDefault();
@@ -37,7 +44,7 @@ const Add_Tourist_Sport = () => {
     }
 
    //send data to server
-   fetch('http://localhost:5000/Tourist_Sports',{
+   fetch('https://travel-mate-server-theta.vercel.app/Tourist_Sports',{
     method:"POST",
     headers:{
       'content-type':'application/json'
@@ -58,13 +65,13 @@ const Add_Tourist_Sport = () => {
    })
   };
   return (
-    <div className="max-w-4xl m-auto bg-gradient-to-b from-teal-500 to-teal-300 p-6 my-4 ">
+    <div className="max-w-4xl m-auto bg-gradient-to-b from-green-500 to-teal-300 p-6 my-4" data-aos="zoom-in">
       <Helmet>
           <title>Travel-Mate | Add Tourist Sport </title>
       </Helmet>
       <div>
         <div className="space-y-4 mb-4">
-          <h1 className="text-4xl text-center dark:text-black">Add Tourist Sport</h1>
+          <h1 className="text-4xl flex justify-center items-center dark:text-black"><span><IoMdAdd className="text-white" /></span><span>Add Tourist Sport</span></h1>
         </div>
         <form onSubmit={addTouristSport} className="form-control p-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -200,8 +207,6 @@ const Add_Tourist_Sport = () => {
                 className="input input-bordered w-full"
               />
             </div>
-          </div>
-          <div className="space-y-6">
             <div className="form-control lg:col-span-2">
               <label htmlFor="photo">
                 <span className="dark:text-black">Photo URL:</span>
@@ -215,6 +220,8 @@ const Add_Tourist_Sport = () => {
                 className="input input-bordered w-full"
               />
             </div>
+          </div>
+          <div className="my-8">
             <div className="lg:col-span-2">
               <input
                 required
