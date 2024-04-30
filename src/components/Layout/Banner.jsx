@@ -1,6 +1,6 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import 'animate.css';
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -12,6 +12,7 @@ import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import { Link } from "react-router-dom";
 
 const Banner = () => {
+
   return (
     <div className="my-4">
       <Swiper
@@ -32,10 +33,13 @@ const Banner = () => {
         <SwiperSlide>
           <div className="bg-[url(https://i.postimg.cc/3xsfCpfw/denissa-devy-f-U2-Mus9qm-N8-unsplash.jpg)] w-full min-h-[600px] bg-no-repeat bg-cover bg-center rounded-lg">
             <div className="p-10 lg:p-20 bg-blue-500 bg-opacity-50 min-h-[600px] space-y-8 rounded-lg">
-              <h1>
+              <h1 className="animate__animated animate__fadeInDown">
                 <span className="text-5xl font-bold text-white">
                   Welcome to{" "}
-                  <span className="text-pink-800">Travel Mate__</span>
+                  <span className="text-pink-800">
+                    Travel-Mate__
+                  </span>
+                  
                 </span>{" "}
                 <br />{" "}
                 <span className="text-3xl font-semibold text-violet-100">
@@ -43,7 +47,7 @@ const Banner = () => {
                 </span>
               </h1>
 
-              <p className="text-2xl text-yellow-100">
+              <p className="text-2xl text-yellow-100 animate__animated animate__pulse">
                 {" "}
                 we believe that every journey is an opportunity for adventure,
                 discovery, and connection. <br /> Whether you're embarking on a
@@ -62,10 +66,13 @@ const Banner = () => {
         <SwiperSlide>
         <div className="bg-[url(https://i.postimg.cc/Y0Cdqx0d/ebadur-rehman-kaium-GBYWXNWO81-A-unsplash.jpg)] w-full min-h-[600px] bg-no-repeat bg-cover bg-center rounded-lg">
             <div className="p-10 lg:p-20 bg-blue-500 bg-opacity-50 min-h-[600px] space-y-8 rounded-lg">
-              <h1>
+              <h1 className="animate__animated animate__fadeInDown">
                 <span className="text-5xl font-bold text-white">
                   Welcome to{" "}
-                  <span className="text-pink-800">Travel Mate__</span>
+                  <span className="text-pink-800">
+                    Travel-Mate__
+                  </span>
+                  
                 </span>{" "}
                 <br />{" "}
                 <span className="text-3xl font-semibold text-violet-100">
@@ -73,7 +80,7 @@ const Banner = () => {
                 </span>
               </h1>
 
-              <p className="text-2xl text-yellow-100">
+              <p className="text-2xl text-yellow-100 animate__animated animate__pulse">
                 {" "}
                 we believe that every journey is an opportunity for adventure,
                 discovery, and connection. <br /> Whether you're embarking on a
@@ -92,10 +99,13 @@ const Banner = () => {
         <SwiperSlide>
         <div className="bg-[url(https://i.postimg.cc/NfXqmgpB/alice-g52-OIhol73-M-unsplash.jpg)] w-full min-h-[600px] bg-no-repeat bg-cover bg-center rounded-lg">
             <div className="p-10 lg:p-20 bg-blue-500 bg-opacity-50 min-h-[600px] space-y-8 rounded-lg">
-              <h1>
+              <h1 className="animate__animated animate__fadeInDown">
                 <span className="text-5xl font-bold text-white">
                   Welcome to{" "}
-                  <span className="text-pink-800">Travel Mate__</span>
+                  <span className="text-pink-800">
+                    Travel-Mate__
+                  </span>
+                  
                 </span>{" "}
                 <br />{" "}
                 <span className="text-3xl font-semibold text-violet-100">
@@ -103,7 +113,7 @@ const Banner = () => {
                 </span>
               </h1>
 
-              <p className="text-2xl text-yellow-100">
+              <p className="text-2xl text-yellow-100 animate__animated animate__pulse">
                 {" "}
                 we believe that every journey is an opportunity for adventure,
                 discovery, and connection. <br /> Whether you're embarking on a
@@ -122,10 +132,13 @@ const Banner = () => {
         <SwiperSlide>
         <div className="bg-[url(https://i.postimg.cc/5yLJ41r4/digitalarbyter-ma-J7h-JBE654-unsplash.jpg)] w-full min-h-[600px] bg-no-repeat bg-cover bg-center rounded-lg">
             <div className="p-10 lg:p-20 bg-blue-500 bg-opacity-50 min-h-[600px] space-y-8 rounded-lg">
-              <h1>
+              <h1 className="animate__animated animate__fadeInDown">
                 <span className="text-5xl font-bold text-white">
                   Welcome to{" "}
-                  <span className="text-pink-800">Travel Mate__</span>
+                  <span className="text-pink-800">
+                    Travel-Mate__
+                  </span>
+                  
                 </span>{" "}
                 <br />{" "}
                 <span className="text-3xl font-semibold text-violet-100">
@@ -133,7 +146,7 @@ const Banner = () => {
                 </span>
               </h1>
 
-              <p className="text-2xl text-yellow-100">
+              <p className="text-2xl text-yellow-100 animate__animated animate__pulse">
                 {" "}
                 we believe that every journey is an opportunity for adventure,
                 discovery, and connection. <br /> Whether you're embarking on a

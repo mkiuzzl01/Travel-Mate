@@ -5,7 +5,6 @@ import Not_Found from "../Pages/Not_Found";
 import React, { Suspense } from "react";
 import Loading from "../Layout/Loading";
 
-
 const Home = React.lazy(() => import("../Pages/Home"));
 const All_Tourists_Spot = React.lazy(() =>
   import("../Pages/All_Tourists_Spot")
@@ -56,9 +55,11 @@ const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`http://localhost:5000/Tourist_Sports/${params.id}`),
         element: (
-          <Suspense fallback={<Loading></Loading>}>
-            <View_Details></View_Details>
-          </Suspense>
+          <PrivateRoute>
+            <Suspense fallback={<Loading></Loading>}>
+              <View_Details></View_Details>
+            </Suspense>
+          </PrivateRoute>
         ),
       },
       {
@@ -113,7 +114,7 @@ const router = createBrowserRouter([
         path: "/About",
         element: (
           <Suspense fallback={<Loading></Loading>}>
-           <About></About>
+            <About></About>
           </Suspense>
         ),
       },
