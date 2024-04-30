@@ -18,7 +18,7 @@ const MyUsers = ({ user }) => {
         </figure>
         <div className="card-body   ">
         <h1>{user ? user?.name : user?.Name}</h1>
-          <p className="font-mono font-semibold">"This site is a wonderful and friendly.if you want create to a tour plan so trust this site"</p>
+          <p className="font-mono font-semibold">This site is a wonderful and friendly.if you want create to a tour plan so trust this site"</p>
           <p>{user? user?.email: user?.Email}</p>
         </div>
       </div>

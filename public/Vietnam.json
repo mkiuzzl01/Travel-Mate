@@ -1,0 +1,53 @@
+[
+    {
+      "id": "21",
+      "tourists_spot_name": "Ha Long Bay",
+      "country_Name": "Vietnam",
+      "location": "Quang Ninh Province, Vietnam",
+      "short_description": "A UNESCO World Heritage Site, Ha Long Bay is famous for its emerald waters, towering limestone islands, and picturesque scenery, offering breathtaking boat cruises and kayaking adventures.",
+      "average_cost": "$100 - $300 per day (accommodation, food, and activities)",
+      "seasonality": "winter",
+      "image":"https://i.postimg.cc/L6d0Wcm4/tron-le-w-Uk2-U5-Wirxg-unsplash.jpg"
+    },
+    {
+      "id": "22",
+      "tourists_spot_name": "Ho Chi Minh City",
+      "country_Name": "Vietnam",
+      "location": "Ho Chi Minh City, Vietnam",
+      "short_description": "Formerly known as Saigon, Ho Chi Minh City is Vietnam's largest city and economic hub, boasting a rich history, vibrant street life, and delicious cuisine.",
+      "average_cost": "$50 - $200 per day (accommodation, food, and transportation)",
+      "seasonality": "summer",
+      "image":"https://i.postimg.cc/mDJ6BqMw/hieu-do-quang-ow-U4-CVUv-Ey-M-unsplash.jpg"
+    },
+    {
+      "id": "23",
+      "tourists_spot_name": "Hoi An Ancient Town",
+      "country_Name": "Vietnam",
+      "location": "Hoi An, Quang Nam Province, Vietnam",
+      "short_description": "A UNESCO World Heritage Site, Hoi An Ancient Town is a charming riverside town with well-preserved architecture, lantern-lit streets, and a rich cultural heritage.",
+      "average_cost": "$30 - $150 per day (accommodation, food, and transportation)",
+      "seasonality": "winter",
+      "image":"https://i.postimg.cc/44HSBfkF/setu-chhaya-30i-CQ5mw2-A8-unsplash.jpg"
+    },
+    {
+      "id": "24",
+      "tourists_spot_name": "Phong Nha Caves",
+      "country_Name": "Vietnam",
+      "location": "Phong Nha-Ke Bang National Park, Quang Binh Province, Vietnam",
+      "short_description": "Home to some of the world's largest and most spectacular caves, Phong Nha Caves offer awe-inspiring underground adventures amidst stunning limestone formations.",
+      "average_cost": "$50 - $200 per day (accommodation, food, and activities)",
+      "seasonality": "summer",
+      "image":"https://i.postimg.cc/wv7GKHtM/andre-ouellet-0h-W5-I7e-RJE-unsplash-1.jpg"
+    },
+    {
+      "id": "25",
+      "tourists_spot_name": "Mekong Delta",
+      "country_Name": "Vietnam",
+      "location": "Mekong Delta, Vietnam",
+      "short_description": "A lush, fertile region known as the 'Rice Bowl' of Vietnam, the Mekong Delta is characterized by its maze of waterways, floating markets, and traditional villages.",
+      "average_cost": "$50 - $200 per day (accommodation, food, and activities)",
+      "seasonality": "winter",
+      "image":"https://i.postimg.cc/fydqLKfh/trang-trinh-q8y-Pqjp-Ycx-E-unsplash.jpg"
+    }
+  ]
+  

@@ -1,0 +1,57 @@
+[
+  {
+    "id": "16",
+    "tourists_spot_name": "Kuala Lumpur",
+    "country_Name": "Malaysia",
+    "location": "Kuala Lumpur, Malaysia",
+    "short_description": "The dynamic capital city of Malaysia, Kuala Lumpur is a bustling metropolis known for its iconic skyscrapers, diverse culture, and vibrant street food scene.",
+    "average_cost": "$50 - $200 per day",
+    "image": "https://i.postimg.cc/PqcC4zYc/esmonde-yong-9-B08udu-My-Y-unsplash-1.jpg",
+    "seasonality": "year-round",
+    "season_type": "all seasons"
+  },
+  {
+    "id": "17",
+    "tourists_spot_name": "Langkawi",
+    "country_Name": "Malaysia",
+    "location": "Langkawi, Malaysia",
+    "short_description": "An archipelago of 99 islands in the Andaman Sea, Langkawi is renowned for its pristine beaches, lush rainforests, and stunning natural landscapes.",
+    "average_cost": "$100 - $300 per day",
+    "image": "https://i.postimg.cc/1tqfYnKz/aaron-lee-3bbtj-Ih50c-U-unsplash.jpg",
+    "seasonality": "November to April",
+    "season_type": "dry season"
+  },
+  {
+    "id": "18",
+    "tourists_spot_name": "Penang",
+    "country_Name": "Malaysia",
+    "location": "Penang, Malaysia",
+    "short_description": "Known as the 'Pearl of the Orient', Penang is a cultural melting pot with a rich history, vibrant street art scene, and delectable cuisine.",
+    "average_cost": "$30 - $150 per day",
+    "image": "https://i.postimg.cc/0Nr6DHMD/jesse-vermeulen-Lbjcs-Nne-KCY-unsplash.jpg",
+    "seasonality": "year-round",
+    "season_type": "all seasons"
+  },
+  {
+    "id": "19",
+    "tourists_spot_name": "Cameron Highlands",
+    "country_Name": "Malaysia",
+    "location": "Cameron Highlands, Malaysia",
+    "short_description": "A refreshing escape from the heat, Cameron Highlands is a hill station known for its cool climate, tea plantations, and scenic hiking trails.",
+    "average_cost": "$50 - $200 per day",
+    "image": "https://i.postimg.cc/wjwytdv9/ravin-rau-otb0-Wq-G3l34-unsplash.jpg",
+    "seasonality": "March to September",
+    "season_type": "summer"
+  },
+  {
+    "id": "20",
+    "tourists_spot_name": "Taman Negara National Park",
+    "country_Name": "Malaysia",
+    "location": "Pahang, Malaysia",
+    "short_description": "One of the oldest rainforests in the world, Taman Negara National Park is a biodiversity hotspot with dense jungles, cascading waterfalls, and thrilling wildlife encounters.",
+    "average_cost": "$100 - $300 per day",
+    "image": "https://i.postimg.cc/T1vp8dkJ/mike-benna-SBi-Vq9e-WEt-Q-unsplash.jpg",
+    "seasonality": "year-round",
+    "season_type": "all seasons"
+  }
+]

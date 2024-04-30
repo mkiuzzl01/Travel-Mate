@@ -7,7 +7,6 @@ import { Tooltip } from "react-tooltip";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [theme, setTheme] = useState("light");
-  console.log(user);
 
   useEffect(() => {
     localStorage.setItem("theme", theme);
@@ -24,7 +23,7 @@ const Navbar = () => {
   };
   const userLogOut = () => {
     logOut()
-      .then((result) => {
+      .then(() => {
         Swal.fire({
           title: "Success!",
           text: "User LogOut Successfully!",

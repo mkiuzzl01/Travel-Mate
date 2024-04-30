@@ -1,0 +1,58 @@
+[
+    {
+      "id": "26",
+      "tourists_spot_name": "Angkor Wat",
+      "country_Name": "Cambodia",
+      "location": "Siem Reap Province, Cambodia",
+      "short_description": "Angkor Wat is the largest religious monument in the world and a UNESCO World Heritage Site, known for its stunning Khmer architecture, intricate carvings, and ancient temples.",
+      "average_cost": "$20 - $60 per day",
+      "seasonality": "summer",
+      "image":"https://i.postimg.cc/tJ6WPvc2/allphoto-bangkok-OVH0-RXko-RE-unsplash.jpg"
+      
+    },
+    {
+      "id": "27",
+      "tourists_spot_name": "Siem Reap",
+      "country_Name": "Cambodia",
+      "location": "Siem Reap, Cambodia",
+      "short_description": "The gateway to the ancient temples of Angkor, Siem Reap is a vibrant city with a blend of Khmer culture, colonial architecture, and bustling markets.",
+      "average_cost": "$30 - $100 per day",
+      "seasonality": "winter",
+      "image":"https://i.postimg.cc/MTvyZpmk/allphoto-bangkok-o4isp-Oaa-O48-unsplash.jpg"
+      
+    },
+    {
+      "id": "28",
+      "tourists_spot_name": "Phnom Penh",
+      "country_Name": "Cambodia",
+      "location": "Phnom Penh, Cambodia",
+      "short_description": "The capital city of Cambodia, Phnom Penh is a vibrant metropolis with a rich history, featuring royal palaces, ornate temples, and a lively riverfront.",
+      "average_cost": "$30 - $100 per day",
+      "seasonality": "summer",
+      "image":"https://i.postimg.cc/664dDTQn/allphoto-bangkok-OE46qjwtxe-I-unsplash.jpg"
+      
+    },
+    {
+      "id": "29",
+      "tourists_spot_name": "Kep",
+      "country_Name": "Cambodia",
+      "location": "Kep, Cambodia",
+      "short_description": "A seaside resort town known for its tranquil beaches, fresh seafood, and French colonial villas, Kep offers a peaceful retreat away from the crowds.",
+      "average_cost": "$30 - $100 per day",
+      "seasonality": "winter",
+      "image":"https://i.postimg.cc/y8yhv58G/bagir-bahana-n-Am-TWqr8x-Ek-unsplash.jpg"
+      
+    },
+    {
+      "id": "30",
+      "tourists_spot_name": "Bokor National Park",
+      "country_Name": "Cambodia",
+      "location": "Kampot Province, Cambodia",
+      "short_description": "A protected area in the Elephant Mountains, Bokor National Park is known for its lush rainforests, diverse wildlife, and abandoned French colonial buildings.",
+      "average_cost": "$30 - $100 per day",
+      "seasonality": "summer",
+      "image":"https://i.postimg.cc/LsytM1fB/daniel-lienert-LAI8am-Rd-VM-unsplash.jpg"
+      
+    }
+  ]
+  

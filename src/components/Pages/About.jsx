@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div className="space-y-6 py-10">
       <Helmet>
-        <title> About Us | Contact Us </title>
+        <title> Travel-Mate | About Us </title>
       </Helmet>
       <div>
         <h1 className="text-3xl font-semibold font-mono">

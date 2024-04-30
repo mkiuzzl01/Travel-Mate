@@ -4,6 +4,8 @@ import PrivateRoute from "./PrivateRoute";
 import Not_Found from "../Pages/Not_Found";
 import React, { Suspense } from "react";
 import Loading from "../Layout/Loading";
+import axios from "axios";
+import View_Country from "../Countries/View_Country";
 
 const Home = React.lazy(() => import("../Pages/Home"));
 const All_Tourists_Spot = React.lazy(() =>
@@ -120,6 +122,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/Bangladesh",
+        loader:()=> fetch('/Bangladesh.json'),
         element: (
           <Suspense fallback={<Loading></Loading>}>
             <Bangladesh></Bangladesh>
@@ -127,7 +130,25 @@ const router = createBrowserRouter([
         ),
       },
       {
+        path: "/Bangladesh/:id",
+        loader: async (params) => {
+          return axios.get("/Bangladesh.json").then((data) => {
+            const country = data.data;
+            const info = country.find(
+              (count) => count.id == params.params.id
+            );
+            return info;
+          });
+        },
+        element: (
+          <Suspense fallback={<Loading></Loading>}>
+            <View_Country></View_Country>
+          </Suspense>
+        ),
+      },
+      {
         path: "/Thailand",
+        loader:()=> fetch('/Thailand.json'),
         element: (
           <Suspense fallback={<Loading></Loading>}>
             <Thailand></Thailand>
@@ -135,7 +156,25 @@ const router = createBrowserRouter([
         ),
       },
       {
+        path: "/Thailand/:id",
+        loader: async (params) => {
+          return axios.get("/Thailand.json").then((data) => {
+            const country = data.data;
+            const info = country.find(
+              (count) => count.id == params.params.id
+            );
+            return info;
+          });
+        },
+        element: (
+          <Suspense fallback={<Loading></Loading>}>
+            <View_Country></View_Country>
+          </Suspense>
+        ),
+      },
+      {
         path: "/Indonesia",
+        loader:()=> fetch('/Indonesia.json'),
         element: (
           <Suspense fallback={<Loading></Loading>}>
             <Indonesia></Indonesia>
@@ -143,7 +182,26 @@ const router = createBrowserRouter([
         ),
       },
       {
+        path: "/Indonesia/:id",
+        loader: async (params) => {
+          return axios.get("/Indonesia.json").then((data) => {
+            const country = data.data;
+            const info = country.find(
+              (count) => count.id == params.params.id
+            );
+            return info;
+          });
+        },
+        element: (
+          <Suspense fallback={<Loading></Loading>}>
+            <View_Country></View_Country>
+          </Suspense>
+        ),
+      },
+      
+      {
         path: "/Malaysia",
+        loader:()=> fetch('/Malaysia.json'),
         element: (
           <Suspense fallback={<Loading></Loading>}>
             <Malaysia></Malaysia>
@@ -151,7 +209,25 @@ const router = createBrowserRouter([
         ),
       },
       {
+        path: "/Malaysia/:id",
+        loader: async (params) => {
+          return axios.get("/Malaysia.json").then((data) => {
+            const country = data.data;
+            const info = country.find(
+              (count) => count.id == params.params.id
+            );
+            return info;
+          });
+        },
+        element: (
+          <Suspense fallback={<Loading></Loading>}>
+            <View_Country></View_Country>
+          </Suspense>
+        ),
+      },
+      {
         path: "/Vietnam",
+        loader:()=> fetch('/Vietnam.json'),
         element: (
           <Suspense fallback={<Loading></Loading>}>
             <Vietnam></Vietnam>
@@ -159,10 +235,45 @@ const router = createBrowserRouter([
         ),
       },
       {
+        path: "/Vietnam/:id",
+        loader: async (params) => {
+          return axios.get("/Vietnam.json").then((data) => {
+            const country = data.data;
+            const info = country.find(
+              (count) => count.id == params.params.id
+            );
+            return info;
+          });
+        },
+        element: (
+          <Suspense fallback={<Loading></Loading>}>
+            <View_Country></View_Country>
+          </Suspense>
+        ),
+      },
+      {
         path: "/Cambodia",
+        loader:()=> fetch('/Cambodia.json'),
         element: (
           <Suspense fallback={<Loading></Loading>}>
             <Cambodia></Cambodia>
+          </Suspense>
+        ),
+      },
+      {
+        path: "/Cambodia/:id",
+        loader: async (params) => {
+          return axios.get("/Cambodia.json").then((data) => {
+            const country = data.data;
+            const info = country.find(
+              (count) => count.id == params.params.id
+            );
+            return info;
+          });
+        },
+        element: (
+          <Suspense fallback={<Loading></Loading>}>
+            <View_Country></View_Country>
           </Suspense>
         ),
       },

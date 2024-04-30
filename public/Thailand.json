@@ -1,0 +1,53 @@
+[
+    {
+      "id": "6",
+      "image":"https://i.postimg.cc/zBJcxKNC/florian-wehde-y3sid-Wv-Dxg-unsplash.jpg",
+      "tourists_spot_name": "Bangkok",
+      "country_Name": "Thailand",
+      "location": "Bangkok, Thailand",
+      "short_description": "The vibrant capital city of Thailand, known for its bustling street markets, ornate temples, and lively nightlife.",
+      "average_cost": "$50 - $200 per day",
+      "seasonality": "Winter"
+    },
+    {
+      "id": "7",
+      "image":"https://i.postimg.cc/0QQC6fxB/cheese-yang-6-D05-B660yd-E-unsplash.jpg",
+      "tourists_spot_name": "Chiang Mai",
+      "country_Name": "Thailand",
+      "location": "Chiang Mai, Thailand",
+      "short_description": "A charming city nestled in the mountains of northern Thailand, renowned for its ancient temples, rich culture, and vibrant markets.",
+      "average_cost": "$30 - $150 per day",
+      "seasonality": "Summer"
+    },
+    {
+      "id": "8",
+      "image":"https://i.postimg.cc/cHX52C1V/alice-tt88cpvt9-CY-unsplash.jpg",
+      "tourists_spot_name": "Ayutthaya",
+      "country_Name": "Thailand",
+      "location": "Ayutthaya, Thailand",
+      "short_description": "A UNESCO World Heritage Site, Ayutthaya is an ancient city filled with magnificent ruins, temples, and historical sites.",
+      "average_cost": "$20 - $100 per day",
+      "seasonality": "Winter"
+    },
+    {
+      "id": "9",
+      "image":"https://i.postimg.cc/brrFhPsd/mike-swigunski-Of-u2a-Pwugw-unsplash.jpg",
+      "tourists_spot_name": "Phuket",
+      "country_Name": "Thailand",
+      "location": "Phuket, Thailand",
+      "short_description": "Thailand's largest island, famous for its stunning beaches, vibrant nightlife, and water sports activities.",
+      "average_cost": "$100 - $300 per day",
+      "seasonality": "Summer"
+    },
+    {
+      "id": "10",
+      "image":"https://i.postimg.cc/MGtDK4kB/jonny-clow-ju-QYh-Whtgi-I-unsplash.jpg",
+      "tourists_spot_name": "Phi Phi Islands",
+      "country_Name": "Thailand",
+      "location": "Phi Phi Islands, Thailand",
+      "short_description": "A tropical paradise with pristine beaches, crystal-clear waters, and breathtaking limestone cliffs, perfect for snorkeling, diving, and island hopping.",
+      "average_cost": "$150 - $400 per day",
+      "seasonality": "Winter"
+    }
+  ]
+  

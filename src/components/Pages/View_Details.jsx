@@ -3,7 +3,7 @@ import { useLoaderData } from "react-router-dom";
 
 const View_Details = () => {
   const sport = useLoaderData();
-  console.log(sport);
+
   return (
     <div
       className="grid grid-cols-1 lg:grid-cols-2 items-center p-2 font-PT_Sans"

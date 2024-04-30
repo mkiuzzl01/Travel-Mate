@@ -1,0 +1,52 @@
+[
+  {
+    "id": "1",
+    "tourists_spot_name": "Sundarban",
+    "country_Name": "Bangladesh",
+    "location": "Khulna Division, Bangladesh",
+    "short_description": "The largest mangrove forest in the world, home to the majestic Royal Bengal Tigers and diverse wildlife.",
+    "average_cost": "$150 - $400 per person",
+    "image": "https://i.postimg.cc/T1bYQzf5/maitheli-maitra-n-Z2c-Eh8-Qzcg-unsplash.jpg",
+    "season_type": "winter"
+  },
+  {
+    "id": "2",
+    "tourists_spot_name": "Cox’s Bazar",
+    "country_Name": "Bangladesh",
+    "location": "Cox's Bazar, Chittagong Division, Bangladesh",
+    "short_description": "Famous for having one of the longest unbroken sandy beaches in the world, Cox's Bazar is a paradise for beach lovers.",
+    "average_cost": "$150 - $400 per person",
+    "image": "https://i.postimg.cc/N0bt4gXz/md-akil-khan-q-o-Od-JIe-WY-unsplash.jpg",
+    "season_type": "winter"
+  },
+  {
+    "id": "3",
+    "tourists_spot_name": "Rangamati",
+    "country_Name": "Bangladesh",
+    "location": "Rangamati District, Chittagong Hill Tracts, Bangladesh",
+    "short_description": "Known for its breathtaking landscapes, serene lakes, and vibrant indigenous culture, Rangamati offers a peaceful retreat amidst nature.",
+    "average_cost": "$150 - $400 per person",
+    "image": "https://i.postimg.cc/J4JGQkzY/hossain-azad-PZ0-MSDlng9w-unsplash.jpg",
+    "season_type": "winter"
+  },
+  {
+    "id": "4",
+    "tourists_spot_name": "Bandarban",
+    "country_Name": "Bangladesh",
+    "location": "Bandarban District, Chittagong Hill Tracts, Bangladesh",
+    "short_description": "A haven for trekking enthusiasts and nature lovers, Bandarban boasts lush green hills, tribal villages, and spectacular vistas.",
+    "average_cost": "$150 - $400 per person",
+    "image": "https://i.postimg.cc/FFwYcZNJ/ashraful-alam-IMX8w-Ir-Cjh-E-unsplash.jpg",
+    "season_type": "winter"
+  },
+  {
+    "id": "5",
+    "tourists_spot_name": "Saint Martin’s Island",
+    "country_Name": "Bangladesh",
+    "location": "Saint Martin's Island, Bay of Bengal, Bangladesh",
+    "short_description": "An idyllic island getaway with pristine beaches, crystal-clear waters, and colorful marine life, perfect for snorkeling and diving.",
+    "average_cost": "$150 - $400 per person",
+    "image": "https://i.postimg.cc/CKwYkZR8/neha-maheen-mahfin-0-Rh-U-HDGpgw-unsplash.jpg",
+    "season_type": "winter"
+  }
+]
