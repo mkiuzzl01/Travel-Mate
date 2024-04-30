@@ -17,6 +17,7 @@ const My_List_Update_Page = React.lazy(() =>
 const Add_Tourist_Sport = React.lazy(() =>
   import("../Pages/Add_Tourist_Sport")
 );
+const About = React.lazy(() => import("../Pages/About"));
 const My_List = React.lazy(() => import("../Pages/My_List"));
 const LogIn = React.lazy(() => import("../Pages/LogIn"));
 const Register = React.lazy(() => import("../Pages/Register"));
@@ -105,6 +106,14 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<Loading></Loading>}>
             <Register></Register>,
+          </Suspense>
+        ),
+      },
+      {
+        path: "/About",
+        element: (
+          <Suspense fallback={<Loading></Loading>}>
+           <About></About>
           </Suspense>
         ),
       },

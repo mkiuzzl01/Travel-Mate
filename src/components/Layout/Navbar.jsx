@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [theme,setTheme] = useState('light');
+  console.log(user);
 
   useEffect(()=>{
     localStorage.setItem('theme',theme);
@@ -45,6 +46,16 @@ const Navbar = () => {
         to="/"
       >
         HOME
+      </NavLink>
+      <NavLink
+        className={({ isActive }) =>
+          isActive
+            ? "border-b-2 rounded-lg text-[#23BE0A] border-red-500 p-2"
+            : "p-2 hover:border-gray-600 hover:border-x-2 rounded-lg"
+        }
+        to="/About"
+      >
+        ABOUT
       </NavLink>
       <NavLink
         className={({ isActive }) =>

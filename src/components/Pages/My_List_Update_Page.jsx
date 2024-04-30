@@ -60,7 +60,7 @@ const My_List_Update_Page = () => {
         })
   };
   return (
-    <div className="max-w-4xl m-auto bg-[#F4F3F0] p-6 my-4 ">
+    <div className="max-w-4xl m-auto bg-gradient-to-b from-teal-500 to-teal-300 p-6 my-4">
       <Helmet>
           <title>Travel-Mate | Update Tourist Spot </title>
       </Helmet>
