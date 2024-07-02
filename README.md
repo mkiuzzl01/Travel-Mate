@@ -1,19 +1,39 @@
 # Website Name: Travel-Mate 
 
-#Website Live Link: https://travel-mate-9fb7a.web.app
+## Overview:
+Designed for Tourist Enthusiasts: This website caters to lovers of tourism.
 
-#Features of This Website:
+Enhanced User Experience: Incorporates captivating animations to enrich user interaction.
 
-=>This is Friendly for Tourist Lover.
+Comprehensive Tourist Information: Facilitates easy discovery and provides detailed information about tourist destinations before visits.
 
-=>Awesome Animation included in this website user experience gives to better.
+High-Security Standards: Ensures robust security measures for all users.
 
-=>Easily find any tourist place and give more information before tourists go.
+Leading Edge: Positioned as a pioneering platform among tourism websites.
 
-=>This site is very secure for any user.
+## Features of This Website:
+1. Place Sharing: Users can share their favorite domestic and international destinations for other
+   visitors to explore.
+   
+2. Editable Content: Users can update or delete their shared places as desired.
+   
+3. Contact Us: Users can submit queries and provide instructions via the Contact Us page.
 
-=>This site is the very first of other tourist sites.
+## Uses Technology:
+=> Front-end: HTML, CSS, Tailwind, JavaScript, React js
+
+=> Backend: Node js, Express js
+
+=> Database: MongoDB
+
+=>Authentication: Firebase
+
+## Follow the instructions if running this project on a local machine:
+=> npm install
+
+=> Set up Environment Variables
+
+=> npm run dev
 
 
-#My Category Name: Southeast Asia
 
