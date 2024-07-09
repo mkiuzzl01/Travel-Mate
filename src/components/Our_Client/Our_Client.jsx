@@ -38,7 +38,7 @@ const Our_Client = () => {
             }
             slider.on("created", () => {
               slider.container.addEventListener("mouseover", () => {
-                mouseOver = true;
+                mouseOver = false;
                 clearNextTimeout();
               });
               slider.container.addEventListener("mouseout", () => {
@@ -72,10 +72,10 @@ const Our_Client = () => {
 
       <div>
         <div ref={sliderRef} className="keen-slider" style={{ height: 300 }}>
-          {users.map((user) => (
-            <div className="keen-slider__slide">
-              <div className="card border-2 bg-base-100 m-auto">
-                <figure className="w-40 h-40 rounded-lg">
+          {users.map((user,idx) => (
+            <div key={idx} className="keen-slider__slide">
+              <div className="flex flex-col items-center max-w-3xl m-auto p-10 border-2 rounded-lg bg-base-100">
+                <figure className="max-w-40">
                   <img
                     src={
                       user?.photoURL
@@ -85,9 +85,9 @@ const Our_Client = () => {
                     alt={user ? user?.name : user?.Name}
                   />
                 </figure>
-                <div className="card-body">
+                <div className="flex flex-col items-center">
                   <h1>{user ? user?.name : user?.Name}</h1>
-                  <p className="font-mono font-semibold">
+                  <p className="font-mono text-center font-semibold">
                     This site is a wonderful and friendly.if you want create to
                     a tour plan so trust this site"
                   </p>
