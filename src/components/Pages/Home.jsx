@@ -4,51 +4,33 @@ import { Helmet } from "react-helmet";
 import Banner from "../Layout/Banner";
 import Contact_Us from "./Contact_Us";
 import { useContext, useEffect, useState } from "react";
-import MyUsers from "./MyUsers";
 import Aos from "aos";
-import 'aos/dist/aos.css'
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-
-// import required modules
-import { Autoplay,FreeMode,Pagination } from "swiper/modules";
+import "aos/dist/aos.css";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Country_Card from "./Country_Card";
+import Our_Client from "../Our_Client/Our_Client";
 
 const Home = () => {
-  const {setLoading} = useContext(AuthContext)
+  const { setLoading } = useContext(AuthContext);
   const sports = useLoaderData();
-  const [countries,setCountries] = useState([]);
-  const [users, setUsers] = useState([]);
-
+  const [countries, setCountries] = useState([]);
+ 
 
   useEffect(() => {
-    setLoading(true)
+    setLoading(true);
     fetch("https://travel-mate-server-theta.vercel.app/Countries")
       .then((res) => res.json())
       .then((data) => {
         setCountries(data);
-        setLoading(false)
+        setLoading(false);
       });
   }, [countries]);
 
-  useEffect(() => {
-    setLoading(true)
-    fetch("https://travel-mate-server-theta.vercel.app/Users")
-      .then((res) => res.json())
-      .then((data) => {
-        setUsers(data);
-        setLoading(false)
-      });
-  }, [users]);
+  
 
-  useEffect(()=>{
-    Aos.init({duration:1000});
-  },[])
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
 
   return (
     <div className="">
@@ -60,7 +42,9 @@ const Home = () => {
       </div>
       <section>
         <div className="my-8 text-center border-y-2 border-dashed py-8 border-purple-400">
-          <h1 className="text-4xl font-semibold text-center font-serif">Tourists Spots</h1>
+          <h1 className="text-4xl font-semibold text-center font-serif">
+            Tourists Spots
+          </h1>
           <p className="font-sans">
             At Travel Mate, we understand that no two travelers are alike.{" "}
             <br /> That's why we specialize in crafting personalized experiences
@@ -84,7 +68,9 @@ const Home = () => {
       </section>
       <section>
         <div className="my-8 text-center border-y-2 border-dashed py-8 border-purple-400">
-          <h1 className="text-4xl font-semibold text-center font-serif">Countries</h1>
+          <h1 className="text-4xl font-semibold text-center font-serif">
+            Countries
+          </h1>
           <p className="font-sans">
             At Travel Mate, we understand that no two travelers are alike.{" "}
             <br /> That's why we specialize in crafting personalized experiences
@@ -98,52 +84,17 @@ const Home = () => {
       </section>
       <section data-aos="flip-down">
         <div className="grid gap-4 grid-cols-1 lg:grid-cols-3 my-8">
-        {
-          countries.map(country=> <Country_Card key={country._id} country={country}></Country_Card>)
-        }
+          {countries.map((country) => (
+            <Country_Card key={country._id} country={country}></Country_Card>
+          ))}
         </div>
       </section>
+
+      {/* this is client section */}
       <section>
-        <div className="my-8 text-center border-y-2 border-dashed py-8 border-purple-400">
-          <h1 className="text-4xl font-semibold text-center font-serif">Our Client</h1>
-          <p className="font-sans">
-            At Travel Mate, we understand that no two travelers are alike.{" "}
-            <br /> That's why we specialize in crafting personalized experiences
-            that cater to your individual preferences and interests. <br />{" "}
-            Whether you're a history buff, a foodie aficionado, an adrenaline
-            junkie, or a nature enthusiast, our team of experienced travel
-            experts will work tirelessly to curate the perfect itinerary just
-            for you.
-          </p>
-        </div>
-
-        <div>
-          <Swiper
-            modules={[FreeMode,Pagination, Autoplay]}
-            loop={true}
-            slidesPerView={3}
-            spaceBetween={30}
-            autoplay ={{
-              delay: 1000,
-              disableOnInteraction: false,
-            }}
-
-            pagination={{
-              clickable: true,
-            }}
-            freeMode={true}
-            className="mySwiper"
-          >
-            <div>
-              {users.map((user, idx) => (
-                <SwiperSlide key={idx}>
-                  <MyUsers user={user}></MyUsers>
-                </SwiperSlide>
-              ))}
-            </div>
-          </Swiper>
-        </div>
+        <Our_Client></Our_Client>
       </section>
+      
       <section>
         <Contact_Us></Contact_Us>
       </section>
