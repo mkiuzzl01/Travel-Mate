@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { IoIosArrowRoundForward } from "react-icons/io";
-import { Helmet } from "react-helmet";
 
 const Country_Card = ({country}) => {
     const {countryName,description,image} = country;

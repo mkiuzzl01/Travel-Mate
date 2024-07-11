@@ -9,9 +9,28 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Banner = () => {
+  const {user} = useContext(AuthContext);
+  const navigate = useNavigate();
+ 
+
+  const handleLogin = () =>{
+    if(user){
+      return Swal.fire({
+        title: 'Warning!',
+        text: 'You are already login!',
+        icon: 'warning',
+        showConfirmButton: false,
+        timer: 1500
+      })
+    }
+    navigate('/LogIn');
+  }
 
   return (
     <div className="my-4">
@@ -56,9 +75,7 @@ const Banner = () => {
                 your trusted companion every step of the way.
               </p>
               <div>
-                <Link to="/LogIn">
-                  <button className="btn">Login Now</button>
-                </Link>
+                  <button onClick={handleLogin} className="btn">Login Now</button>
               </div>
             </div>
           </div>
@@ -89,9 +106,9 @@ const Banner = () => {
                 your trusted companion every step of the way.
               </p>
               <div>
-                <Link to="/LogIn">
-                  <button className="btn">Login Now</button>
-                </Link>
+              <div>
+                  <button onClick={handleLogin} className="btn">Login Now</button>
+              </div>
               </div>
             </div>
           </div>
@@ -122,9 +139,9 @@ const Banner = () => {
                 your trusted companion every step of the way.
               </p>
               <div>
-                <Link to="/LogIn">
-                  <button className="btn">Login Now</button>
-                </Link>
+              <div>
+                  <button onClick={handleLogin} className="btn">Login Now</button>
+              </div>
               </div>
             </div>
           </div>
@@ -155,9 +172,9 @@ const Banner = () => {
                 your trusted companion every step of the way.
               </p>
               <div>
-                <Link to="/LogIn">
-                  <button className="btn">Login Now</button>
-                </Link>
+              <div>
+                  <button onClick={handleLogin} className="btn">Login Now</button>
+              </div>
               </div>
             </div>
           </div>

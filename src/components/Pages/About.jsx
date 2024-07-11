@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet";
 import Aos from "aos";
 import 'aos/dist/aos.css'
 import { useEffect } from "react";
+import Our_Client from "../Our_Client/Our_Client";
 
 
 const About = () => {
@@ -55,6 +56,7 @@ const About = () => {
           that every detail is meticulously planned and executed with precision.
         </p>
       </div>
+      {/* <Our_Client></Our_Client> */}
     </div>
   );
 };

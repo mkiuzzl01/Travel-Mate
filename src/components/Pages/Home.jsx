@@ -1,13 +1,13 @@
 import { useLoaderData } from "react-router-dom";
-import Tourist_Sport_Card from "./Tourist_Sport_Card";
+import Tourist_Sport_Card from "../Cards/Tourist_Sport_Card";
 import { Helmet } from "react-helmet";
-import Banner from "../Layout/Banner";
+import Banner from "../Banner/Banner";
 import Contact_Us from "./Contact_Us";
 import { useContext, useEffect, useState } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-import Country_Card from "./Country_Card";
+import Country_Card from "../Cards/Country_Card";
 import Our_Client from "../Our_Client/Our_Client";
 
 const Home = () => {
@@ -24,16 +24,15 @@ const Home = () => {
         setCountries(data);
         setLoading(false);
       });
-  }, [countries]);
+  }, []);
 
-  
 
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);
 
   return (
-    <div className="">
+    <div>
       <Helmet>
         <title>Travel-Mate | Home </title>
       </Helmet>
@@ -81,13 +80,13 @@ const Home = () => {
             for you.
           </p>
         </div>
-      </section>
-      <section data-aos="flip-down">
+      <div data-aos="flip-down">
         <div className="grid gap-4 grid-cols-1 lg:grid-cols-3 my-8">
           {countries.map((country) => (
             <Country_Card key={country._id} country={country}></Country_Card>
           ))}
         </div>
+      </div>
       </section>
 
       {/* this is client section */}

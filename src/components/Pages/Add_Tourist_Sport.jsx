@@ -9,7 +9,6 @@ import 'aos/dist/aos.css'
 const Add_Tourist_Sport = () => {
     const [select,setSelect] = useState();
     const {user} = useContext(AuthContext);
-
     useEffect(()=>{
       Aos.init({duration:1000});
     },[])
@@ -28,6 +27,7 @@ const Add_Tourist_Sport = () => {
     const seasonal = select;
     const userEmail = user.email;
     const userName = user.displayName;
+    const userImage = user.photoURL;
 
     const info = {
       sport_name,
@@ -40,7 +40,8 @@ const Add_Tourist_Sport = () => {
       total_visitor,
       seasonal,
       userName,
-      userEmail
+      userEmail,
+      userImage
     }
 
    //send data to server

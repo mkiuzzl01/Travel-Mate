@@ -79,7 +79,7 @@ const Tourist_Sport_Card = ({ sport }) => {
 };
 
 Tourist_Sport_Card.propTypes = {
-  sport: PropTypes.obj,
+  sport: PropTypes.object
 };
 
 export default Tourist_Sport_Card;

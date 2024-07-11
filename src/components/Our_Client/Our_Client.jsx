@@ -1,59 +1,26 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useKeenSlider } from "keen-slider/react";
-import "keen-slider/keen-slider.min.css";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import axios from "axios";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/autoplay';
+import { Autoplay } from 'swiper/modules';
 
 const Our_Client = () => {
-    const [users, setUsers] = useState([]);
-    const { setLoading } = useContext(AuthContext);
+  const [clients, setClients] = useState([]);
+  const { setLoading } = useContext(AuthContext);
 
-    useEffect(() => {
-        setLoading(true);
-        fetch("https://travel-mate-server-theta.vercel.app/Users")
-          .then((res) => res.json())
-          .then((data) => {
-            setUsers(data);
-            setLoading(false);
-          });
-      }, [users]);
+  const clientData = async () => {
+    setLoading(true);
+    const { data } = await axios.get('https://travel-mate-server-theta.vercel.app/Our-client');
+    setLoading(false);
+    setClients(data);
+  };
 
-    const [sliderRef] = useKeenSlider(
-        {
-          loop: true,
-          vertical: true,
-        },
-        [
-          (slider) => {
-            let timeout;
-            let mouseOver = false;
-            function clearNextTimeout() {
-              clearTimeout(timeout);
-            }
-            function nextTimeout() {
-              clearTimeout(timeout);
-              if (mouseOver) return;
-              timeout = setTimeout(() => {
-                slider.next();
-              }, 2000);
-            }
-            slider.on("created", () => {
-              slider.container.addEventListener("mouseover", () => {
-                mouseOver = false;
-                clearNextTimeout();
-              });
-              slider.container.addEventListener("mouseout", () => {
-                mouseOver = false;
-                nextTimeout();
-              });
-              nextTimeout();
-            });
-            slider.on("dragStarted", clearNextTimeout);
-            slider.on("animationEnded", nextTimeout);
-            slider.on("updated", nextTimeout);
-          },
-        ]
-      );
-    
+  useEffect(() => {
+    clientData();
+  }, []);
+
   return (
     <section>
       <div className="my-8 text-center border-y-2 border-dashed py-8 border-purple-400">
@@ -70,33 +37,64 @@ const Our_Client = () => {
         </p>
       </div>
 
-      <div>
-        <div ref={sliderRef} className="keen-slider" style={{ height: 300 }}>
-          {users.map((user,idx) => (
-            <div key={idx} className="keen-slider__slide">
-              <div className="flex flex-col items-center max-w-3xl m-auto p-10 border-2 rounded-lg bg-base-100">
+      <div className="swiper-container" style={{ height: '350px', overflow: 'hidden' }}>
+        <Swiper
+          direction={'vertical'}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          breakpoints={{
+            // Responsive breakpoints
+            640: {
+              direction: 'horizontal',
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            768: {
+              direction: 'horizontal',
+              slidesPerView: 2,
+              spaceBetween: 40,
+            },
+            1024: {
+              direction: 'horizontal',
+              slidesPerView: 3,
+              spaceBetween: 50,
+            },
+            1280: {
+              direction: 'vertical',
+              slidesPerView: 1,
+              spaceBetween: 30,
+            },
+          }}
+          modules={[Autoplay]}
+          className="mySwiper"
+          style={{ height: '100%' }}
+        >
+          {clients.map((client, idx) => (
+            <SwiperSlide key={idx}>
+              <div className="flex flex-col items-center max-w-3xl m-auto p-5 border-2 rounded-lg bg-base-200">
                 <figure className="max-w-40">
                   <img
                     src={
-                      user?.photoURL
-                        ? user.photoURL
+                      client?.userImage
+                        ? client.userImage
                         : "https://i.postimg.cc/vTN8PMKb/blank-profile-picture-973460-1280.png"
                     }
-                    alt={user ? user?.name : user?.Name}
+                    alt={client ? client?.userName : "Unknown"}
                   />
                 </figure>
                 <div className="flex flex-col items-center">
-                  <h1>{user ? user?.name : user?.Name}</h1>
+                  <h1>{client ? client?.userName : "Unknown"}</h1>
                   <p className="font-mono text-center font-semibold">
-                    This site is a wonderful and friendly.if you want create to
-                    a tour plan so trust this site"
+                    "This site is a wonderful and friendly. If you want to create a tour plan, trust this site."
                   </p>
-                  <p>{user ? user?.email : user?.Email}</p>
+                  <p>{client?.userEmail}</p>
                 </div>
               </div>
-            </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
     </section>
   );

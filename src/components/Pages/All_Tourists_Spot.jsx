@@ -1,12 +1,12 @@
 import { Helmet } from "react-helmet";
-import Tourist_Sport_Card from "./Tourist_Sport_Card";
 import { useEffect, useState } from "react";
 import Aos from "aos";
 import 'aos/dist/aos.css'
+import Tourist_Sport_Card from "../Cards/Tourist_Sport_Card";
 
 const All_Tourists_Spot = () => {
   const [sports, setSpots] = useState([]);
-  console.log(sports);
+
 
   useEffect(() => {
     fetch("https://travel-mate-server-theta.vercel.app/Tourist_Sports")
