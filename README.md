@@ -35,5 +35,9 @@ Leading Edge: Positioned as a pioneering platform among tourism websites.
 
 => npm run dev
 
+## Profile Access for Admin:
+=> email: admin@gmail.com
+=> Password : 1234567Kh#
+
 
 
